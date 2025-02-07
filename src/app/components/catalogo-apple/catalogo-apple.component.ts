@@ -74,6 +74,10 @@ export class CatalogoAppleComponent implements OnInit {
     });
   }
   
+   // Contamos el número de modelos combinados
+   getNumMoviles(): number {
+    return this.modelosCombinados.length;
+  }
 
   getImageForModel(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo (iPhone 16, iPhone 16 Pro, etc.)
