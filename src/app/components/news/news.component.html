@@ -1,4 +1,4 @@
-<!-- catalogo-apple.component.html -->
+
 <header class="cabecera">
     <div class="imagenLogo">
         <a routerLink="/home">
@@ -6,7 +6,6 @@
         </a>
     </div>
     <div>
-        
         <a routerLink="/home" routerLinkActive="active" class="marcas">{{ home }}</a>
         <a routerLink="/catalogo-apple" routerLinkActive="active" class="marcas">{{ apple }}</a>
         <a routerLink="/catalogo-samsung" routerLinkActive="active" class="marcas">{{ samsung }}</a>
@@ -20,26 +19,20 @@
     </div>
 </header>
 
-<main class="catalogo">
-    <h1>Catálogo {{ apple }}</h1>
-     <p>Total de resultados de la búsqueda: {{ getNumMoviles() }}</p>
-    <div *ngFor="let modeloCombinado of modelosCombinados" class="modelo">
-        <a class="titMovil" href="">{{ modeloCombinado }}</a>
-        <img [src]="getImageForModel(modeloCombinado)" alt="Imagen del modelo">
-        <div class="bottom">
-            <div class="precioYBoton">
-                <p><strong></strong><span class="precio"> {{ getPrice(modeloCombinado) }} </span></p>
-                <a class="botonComprar" href="">Añadir a la cesta</a>
-            </div>
-            <div class="detalles">
-                <p><strong>Modelo:</strong> {{ modeloCombinado.split(" ")[0] }}</p>
-                <p><strong>Capacidad:</strong> {{ getCapacity(modeloCombinado) }}</p>
-                <p><strong>Color:</strong> {{ getColor(modeloCombinado) }}</p>
-                <p><strong>Chip:</strong> {{ getChip(modeloCombinado) }}</p>
-            </div>
+<main>
+    <h1>{{ news }}</h1>
+    <ul>
+      <li *ngFor="let noticia of noticias">
+        <div class="text">
+        <a [href]="noticia.url" target="_blank" class="linkNews"><h3>{{ noticia.title }}</h3></a>
+        <p class="autor">{{ noticia.author }}</p>
+        <p class="fecha">{{ noticia.publishedAt }}</p>
+          <p class="descripcion">{{ noticia.description }}</p>
         </div>
-    </div>  
-</main>
+        <img [src]="noticia.urlToImage" alt="{{ noticia.title }}" class="imagen" />
+      </li>
+    </ul>
+  </main>
+  
 
-
-
+  

@@ -7,8 +7,9 @@ export class MarcasService {
   // Nombres de las marcas
   readonly apple = 'Apple';
   readonly samsung = 'Samsung';
-  readonly reserva = 'Reserva';
+  readonly reserva = 'Reservar';
   readonly home = 'Home';
+  readonly news = 'Noticias';
 
   constructor() {}
 }

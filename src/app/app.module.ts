@@ -5,12 +5,11 @@ import { HttpClientModule } from '@angular/common/http'; // Si usas HttpClient
 
 // Importa tus componentes
 import { AppComponent } from './app.component';
-import { AppleComponent } from './components/apple/apple.component';
-import { SamsungComponent } from './components/samsung/samsung.component';
 import { HomeComponent } from './components/home/home.component';
 import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
 import { CatalogoSamsungComponent } from './components/catalogo-samsung/catalogo-samsung.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
+import { NewsComponent } from './components/news/news.component';
 import { CommonModule } from '@angular/common';
 
 // Define las rutas
@@ -22,12 +21,11 @@ const routes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    AppleComponent,
-    SamsungComponent,
     HomeComponent,
     CatalogoAppleComponent,
     CatalogoSamsungComponent,
-    ReservaComponent
+    ReservaComponent,
+    NewsComponent
   ],
   imports: [
     BrowserModule,
