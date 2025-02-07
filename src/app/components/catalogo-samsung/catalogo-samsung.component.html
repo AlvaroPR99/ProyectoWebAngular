@@ -1,0 +1,20 @@
+<!-- home.component.html -->
+<header class="cabecera">
+    <div class="imagenLogo">
+        <a routerLink = "/home">
+            <img id="logoHome" src="assets/image/logo_transparent_modoBlanco.png" width="110" alt="Logo empresa" title="Smartcell">
+        </a>
+    </div>
+    <div>
+        <!-- Este enlace usará el routerLink para redirigir -->
+        <a routerLink="/home" class="marcas">{{ home }}</a>
+        <a routerLink="/catalogo-apple" class="marcas">{{ apple }}</a>
+        <a routerLink="/catalogo-samsung" class="marcas">{{ samsung }}</a>
+        <a routerLink="/reserva" class="marcas">{{ reserva }}</a>
+    </div>
+    <div class="iconosNav">
+        <a href="#busqueda"><img id="logoHome" src="assets/image/busqueda-negro.png" width="22"></a>
+        <a href="#carrito"><img id="logoHome" src="assets/image/bolsa-de-la-compra-negro.png" width="22"></a>
+        <a href="#usuario"><img id="logoHome" src="assets/image/usuario_negro.png" width="22"></a>
+    </div>
+</header>

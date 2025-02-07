@@ -1,0 +1,165 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    font-family: 'Plus Jakarta Sans', Arial;
+   
+}
+
+@font-face {
+    
+    font-family: 'Plus Jakarta Sans';
+    src: url('/src/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('');
+    font-weight: normal;
+    font-style: normal;
+}
+
+main{
+    background-color: black;
+    
+    
+}
+
+.logoHome{
+    image-rendering: auto;
+}
+
+.cabecera {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    width: 100%; 
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(0, 0, 0, 0.919);
+    border-bottom: 2px solid #ffffff55;
+}
+
+
+/*Hover del texto de la cabecera (marcas)*/
+.marcas:hover{
+    outline: 2px solid rgb(38, 38, 38);
+    background-color: rgb(38, 38, 38);
+}
+
+/*Texto de la cabecera (marcas)*/
+.marcas{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 550;
+    color: rgb(255, 255, 255);
+    padding: 5px 10px;
+    border-radius: 2px;
+
+}
+
+.iconosNav img{
+    margin: 5px 10px;
+    
+}
+
+
+.titHome{
+    color: rgba(240, 248, 255, 0.929);
+    margin-top: 65px;
+    margin-bottom: 35px;
+    font-size: 35px;
+}
+
+.video{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1px 0px;
+    
+}
+
+
+.titHome h3{
+    text-align: center;
+    padding: 10px;
+    align-items: center;
+    font-size: 25px;
+    font-weight: 450; 
+}
+
+.titHome h6{
+    text-align: center;
+    font-size: 15px;
+    font-weight: 350;
+}
+
+.botonesInicio{
+    display: flex;
+    justify-content: center; 
+    /* Espacio entre botones */
+    gap: 10px; 
+}
+
+.botonesInicio a{
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    background-color: rgba(16, 94, 220, 0.729);
+}
+
+#botonBlanco{
+    background-color: rgba(255, 255, 255, 0.871);
+    color: rgba(0, 0, 0, 0.773);
+    
+}
+
+video{
+    top: 0%;
+    left:0% ;
+    margin-top: 10px;
+    width: auto;
+    height: auto;
+}
+
+.sectGaleria{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    align-items: center;
+    padding-top: 100px;
+}
+
+.galeria{
+    display: flex;
+    width: 600px;
+    height: 430px;
+}
+
+.titGaleria{
+    color: rgba(240, 248, 255, 0.929);
+    font-size: 35px;
+    padding-bottom: 40px;
+}
+
+.galeria img{
+    width: 0px;
+    flex-grow: 1;
+    object-fit: cover;
+    opacity: 0.8;
+    transition: 0.5s ease;
+}
+
+.galeria img:hover{
+    cursor: crosshair;
+    width: 300px;
+    opacity: 1;
+    filter: contrast(120%);
+    cursor: default;
+}

@@ -1,0 +1,33 @@
+[
+    {
+      "id": 1,
+      "name": "iPhone 16",
+      "image": "https://pngimg.com/uploads/iphone16/iphone16_PNG36.png",
+      "colors": ["Rosa", "Negro", "Blanco", "Verde", "Azul"],
+      "capacities": ["128GB", "256GB", "512GB", "1TB"],
+      "operating_system": "iOS",
+      "chip": "A18 Bionic",
+      "price": ["899€", "999€", "1099€", "1299€"]
+    },
+    {
+      "id": 2,
+      "name": "iPhone 16 Pro",
+      "image": "https://pngimg.com/uploads/iphone16/iphone16_PNG38.png",
+      "colors": ["Natural", "Blanco", "Desierto", "Negro"],
+      "capacities": ["128GB", "256GB", "512GB", "1TB"],
+      "operating_system": "iOS",
+      "chip": "A18 Pro",
+      "price": ["1199€", "1299€", "1499€", "1699€"]
+    },
+    {
+      "id": 3,
+      "name": "iPhone 16 Pro Max",
+      "image": "https://pngimg.com/uploads/iphone16/iphone16_PNG38.png",
+      "colors": ["Natural", "Blanco", "Desierto", "Negro"],
+      "capacities": ["256GB", "512GB", "1TB"],
+      "operating_system": "iOS",
+      "chip": "A18 Pro",
+      "price": ["1399€", "1599€", "1899€"]
+    }
+  ]
+  

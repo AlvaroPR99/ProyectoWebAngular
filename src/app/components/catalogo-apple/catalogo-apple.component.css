@@ -1,0 +1,154 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    font-family: 'Plus Jakarta Sans', Arial;
+   
+}
+
+@font-face {
+    
+    font-family: 'Plus Jakarta Sans';
+    src: url('/src/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cabecera {
+    position: relative;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    width: 100%; 
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.919);
+    border-bottom: 2px solid #00000055;
+    
+}
+
+.imagenLogo{
+    padding-left: 50px;
+}
+/*Hover del texto de la cabecera (marcas)*/
+.marcas:hover{
+    outline: 2px solid rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+}
+
+/*Texto de la cabecera (marcas)*/
+.marcas{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 550;
+    color: rgb(64, 64, 64);
+    padding: 5px 10px;
+    border-radius: 2px;
+
+}
+
+.iconosNav{
+    padding-right: 50px;
+}
+
+.iconosNav img{
+    margin: 5px 10px;
+
+}
+
+.catalogo {
+    padding-top: 20px;
+    margin-left: 280px;
+    margin-right: 280px;
+    color: #333;
+    display: grid; /* Activamos el grid para los modelos */
+    grid-template-columns: 1fr; /* Cambié esto para que solo haya una columna por modelo */
+    gap: 20px; /* Espaciado entre los elementos */
+     /* Centra los items dentro de cada celda */
+}
+
+.modelo {
+    border: 1px solid #c7c7c7;
+    border-radius: 8px;
+    padding: 15px;
+    background-color: #ffffff;
+    display: flex; /* Usamos flexbox para los modelos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Hace que el modelo ocupe el 100% del ancho del contenedor */
+}
+
+.modelo img {
+    width: 20%;
+    height: auto;
+}
+
+.modelo:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 300px;
+}
+
+.detalles {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.detalles ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.titMovil{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.detalles li {
+    margin-bottom: 5px;
+}
+
+.precio{
+    font-size: 30px;
+}
+
+.precioYBoton{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.botonComprar {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    border-radius: 5px;
+    background-color: rgba(16, 94, 220, 0.729);
+}
+
+
