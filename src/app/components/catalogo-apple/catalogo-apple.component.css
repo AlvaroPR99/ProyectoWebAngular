@@ -15,7 +15,7 @@
 }
 
 .cabecera {
-    position: relative;
+    position: fixed;
     top: 0; 
     left: 0; 
     right: 0;
@@ -34,10 +34,14 @@
 .imagenLogo{
     padding-left: 50px;
 }
-/*Hover del texto de la cabecera (marcas)*/
+
 .marcas:hover{
     outline: 2px solid rgb(236, 236, 236);
     background-color: rgb(236, 236, 236);
+}
+
+.marcas.active{
+    color: rgba(16, 94, 220, 0.729)
 }
 
 /*Texto de la cabecera (marcas)*/
@@ -61,12 +65,13 @@
 }
 
 .catalogo {
-    padding-top: 20px;
-    margin-left: 280px;
-    margin-right: 280px;
+    padding-top: 70px;
+    padding-bottom: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
     color: #333;
     display: grid; /* Activamos el grid para los modelos */
-    grid-template-columns: 1fr; /* Cambié esto para que solo haya una columna por modelo */
+    grid-template-columns: 1fr; 
     gap: 20px; /* Espaciado entre los elementos */
      /* Centra los items dentro de cada celda */
 }

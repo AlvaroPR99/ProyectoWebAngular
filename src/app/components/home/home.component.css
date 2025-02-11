@@ -43,7 +43,10 @@ main{
 }
 
 
-/*Hover del texto de la cabecera (marcas)*/
+.marcas.active{
+    color: rgba(16, 94, 220, 0.729);
+}
+
 .marcas:hover{
     outline: 2px solid rgb(38, 38, 38);
     background-color: rgb(38, 38, 38);

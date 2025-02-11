@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    font-family: 'Plus Jakarta Sans', Arial;
+   
+}
+
+@font-face {
+    
+    font-family: 'Plus Jakarta Sans';
+    src: url('/src/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf') format('');
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cabecera {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    width: 100%; 
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0.919);
+    border-bottom: 2px solid #00000055;
+    
+}
+
+.imagenLogo{
+    padding-left: 50px;
+}
+
+.marcas:hover{
+    outline: 2px solid rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+}
+
+.marcas.active{
+    color: rgba(16, 94, 220, 0.729)
+}
+
+/*Texto de la cabecera (marcas)*/
+.marcas{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 550;
+    color: rgb(64, 64, 64);
+    padding: 5px 10px;
+    border-radius: 2px;
+
+}
+
+.iconosNav{
+    padding-right: 50px;
+}
+
+.iconosNav img{
+    margin: 5px 10px;
+
+}
+
+main {
+  padding: 70px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 15px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+li:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); 
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  color: #555555;
+}
+
+.linkNews {
+  text-decoration: none;
+  color: rgb(55, 55, 55);
+  border-radius: 5px;
+  padding-top: 15px;
+}
+
+.imagen {
+  width: 50%; 
+  height: 100%;
+  object-fit: cover; 
+}
+
+.autor.fecha {
+  color: #292929;
+}
+
+
+  
+

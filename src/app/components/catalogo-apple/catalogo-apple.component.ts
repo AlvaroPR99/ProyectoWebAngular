@@ -14,7 +14,8 @@ export class CatalogoAppleComponent implements OnInit {
   apple: string;
   samsung: string;
   reserva: string;
-  home: string;
+  home: string; 
+  news: string;
 
   modelos = [
     {
@@ -62,6 +63,7 @@ export class CatalogoAppleComponent implements OnInit {
     this.samsung = this.marcasService.samsung;
     this.reserva = this.marcasService.reserva;
     this.home = this.marcasService.home;
+    this.news = this.marcasService.news;
   }
 
   ngOnInit(): void {
