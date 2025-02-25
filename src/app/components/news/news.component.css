@@ -26,9 +26,16 @@
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.919);
-    border-bottom: 2px solid #00000055;
+    background-color: rgba(255, 255, 255, 0);
     
+}
+
+.cabecera:hover {
+  background-color: rgba(255, 255, 255, 0.919);
+}
+
+.cabecera.hide {
+  top: -80px; /* Ajusta la altura para ocultar la cabecera */
 }
 
 .imagenLogo{
@@ -44,14 +51,13 @@
     color: rgba(16, 94, 220, 0.729)
 }
 
-/*Texto de la cabecera (marcas)*/
+
 .marcas{
-    text-decoration: none;
-    font-size: 17px;
-    font-weight: 550;
-    color: rgb(64, 64, 64);
-    padding: 5px 10px;
-    border-radius: 2px;
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 550;
+  color: rgb(64, 64, 64);
+  padding: 5px 10px;
 
 }
 

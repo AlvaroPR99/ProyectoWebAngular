@@ -1,7 +1,7 @@
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    box-sizing: border-box; 
     font-family: 'Plus Jakarta Sans', Arial;
    
 }
@@ -26,15 +26,18 @@
     justify-content: space-between;
     padding-top: 10px;
     padding-bottom: 10px;
-    background-color: rgba(255, 255, 255, 0.919);
-    border-bottom: 2px solid #00000055;
+    background-color: rgba(255, 255, 255, 0);
     
+}
+
+.cabecera:hover{
+    background-color: rgba(255, 255, 255, 0.919);
 }
 
 .imagenLogo{
     padding-left: 50px;
 }
-/*Hover del texto de la cabecera (marcas)*/
+
 .marcas:hover{
     outline: 2px solid rgb(236, 236, 236);
     background-color: rgb(236, 236, 236);
@@ -50,7 +53,6 @@
     font-weight: 550;
     color: rgb(64, 64, 64);
     padding: 5px 10px;
-    border-radius: 2px;
 
 }
 
@@ -69,22 +71,20 @@
     margin-left: 15%;
     margin-right: 15%;
     color: #333;
-    display: grid; /* Activamos el grid para los modelos */
+    display: grid; 
     grid-template-columns: 1fr; 
-    gap: 20px; /* Espaciado entre los elementos */
-     /* Centra los items dentro de cada celda */
+    gap: 20px; 
 }
 
 .modelo {
     border: 1px solid #c7c7c7;
-    border-radius: 8px;
     padding: 15px;
     background-color: #ffffff;
-    display: flex; /* Usamos flexbox para los modelos */
+    display: flex; 
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
-    width: 100%; /* Hace que el modelo ocupe el 100% del ancho del contenedor */
+    width: 100%; 
 }
 
 .modelo img {
@@ -95,6 +95,10 @@
 .modelo:hover {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
+.cabecera.hide {
+    top: -80px; 
+  }
 
 h2 {
     font-size: 1.2em;
@@ -151,7 +155,7 @@ h2 {
     padding: 10px;
     padding-left: 40px;
     padding-right: 40px;
-    border-radius: 5px;
+    border-radius: 0px;
     background-color: rgba(16, 94, 220, 0.729);
 }
 

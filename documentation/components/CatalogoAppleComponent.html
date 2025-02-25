@@ -1,0 +1,1893 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>project-web-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">project-web-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  CatalogoAppleComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/catalogo-apple/catalogo-apple.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-catalogo-apple</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./catalogo-apple.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./catalogo-apple.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#apple" >apple</a>
+                            </li>
+                            <li>
+                                <a href="#home" >home</a>
+                            </li>
+                            <li>
+                                <a href="#lastScrollTop" >lastScrollTop</a>
+                            </li>
+                            <li>
+                                <a href="#modelos" >modelos</a>
+                            </li>
+                            <li>
+                                <a href="#modelosCombinados" >modelosCombinados</a>
+                            </li>
+                            <li>
+                                <a href="#news" >news</a>
+                            </li>
+                            <li>
+                                <a href="#reserva" >reserva</a>
+                            </li>
+                            <li>
+                                <a href="#samsung" >samsung</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#getCapacity" >getCapacity</a>
+                            </li>
+                            <li>
+                                <a href="#getChip" >getChip</a>
+                            </li>
+                            <li>
+                                <a href="#getColor" >getColor</a>
+                            </li>
+                            <li>
+                                <a href="#getImageForModel" >getImageForModel</a>
+                            </li>
+                            <li>
+                                    <span class="modifier">Private</span>
+                                <a href="#getNombreModelo" >getNombreModelo</a>
+                            </li>
+                            <li>
+                                <a href="#getNumMoviles" >getNumMoviles</a>
+                            </li>
+                            <li>
+                                <a href="#getPrice" >getPrice</a>
+                            </li>
+                            <li>
+                                <a href="#hideHeaderOnScroll" >hideHeaderOnScroll</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onWindowScroll" >onWindowScroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll" >window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(marcasService: <a href="../injectables/MarcasService.html" target="_self">MarcasService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:78</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>marcasService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MarcasService.html" target="_self" >MarcasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio que gestiona los nombres de la cabecera.</p>
+
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section data-compodoc="block-methods">
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:scroll"></a>
+                    <span class="name">
+                        <span ><b>window:scroll</b></span>
+                        <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:scroll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getCapacity"></a>
+                    <span class="name">
+                        <span ><b>getCapacity</b></span>
+                        <a href="#getCapacity"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getCapacity(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="237"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:237</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener la capacidad del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getChip"></a>
+                    <span class="name">
+                        <span ><b>getChip</b></span>
+                        <a href="#getChip"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getChip(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="191"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:191</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener el chip del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getColor"></a>
+                    <span class="name">
+                        <span ><b>getColor</b></span>
+                        <a href="#getColor"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getColor(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="171"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:171</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener el color del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getImageForModel"></a>
+                    <span class="name">
+                        <span ><b>getImageForModel</b></span>
+                        <a href="#getImageForModel"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getImageForModel(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="152"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:152</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener la imagen del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNombreModelo"></a>
+                    <span class="name">
+                            <span class="modifier">Private</span>
+                        <span ><b>getNombreModelo</b></span>
+                        <a href="#getNombreModelo"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>getNombreModelo(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="204"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:204</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener el sistema operativo del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getNumMoviles"></a>
+                    <span class="name">
+                        <span ><b>getNumMoviles</b></span>
+                        <a href="#getNumMoviles"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getNumMoviles()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="142"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:142</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="getPrice"></a>
+                    <span class="name">
+                        <span ><b>getPrice</b></span>
+                        <a href="#getPrice"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>getPrice(modeloCombinado: <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank">string</a>)</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="218"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:218</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                            <div class="io-description">
+                                <b>Parameters :</b>
+                                
+                                <table class="params">
+                                    <thead>
+                                        <tr>
+                                            <td>Name</td>
+                                                <td>Type</td>
+                                            <td>Optional</td>
+                                                <td>Description</td>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                                <td>modeloCombinado</td>
+                                            <td>
+                                                            <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+                                            </td>
+
+                                            <td>
+                                                    No
+                                            </td>
+
+
+                                            <td>
+                                                    <p>Método para obtener el precio del modelo seleccionado.</p>
+
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                        </div>
+                            <div class="io-description">
+                                
+                            </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideHeaderOnScroll"></a>
+                    <span class="name">
+                        <span ><b>hideHeaderOnScroll</b></span>
+                        <a href="#hideHeaderOnScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideHeaderOnScroll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="122"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:122</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="95"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:95</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onWindowScroll"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onWindowScroll</b></span>
+                        <a href="#onWindowScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onWindowScroll()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="114"
+                                    class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:114</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apple"></a>
+                    <span class="name">
+                        <span ><b>apple</b></span>
+                        <a href="#apple"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="24" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:24</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Apple</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="home"></a>
+                    <span class="name">
+                        <span ><b>home</b></span>
+                        <a href="#home"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="33" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:33</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Home</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastScrollTop"></a>
+                    <span class="name">
+                        <span ><b>lastScrollTop</b></span>
+                        <a href="#lastScrollTop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="93" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:93</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modelos"></a>
+                    <span class="name">
+                        <span ><b>modelos</b></span>
+                        <a href="#modelos"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[
+    {
+      id: &#x27;1&#x27;,
+      name: &#x27;iPhone 16&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-rosa.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-negro.jpg&#x27;,&#x27;assets/image/iPhone/iphone16-blanco.jpg&#x27;
+        ,&#x27;assets/image/iPhone/iphone16-verde.jpg&#x27;,&#x27;assets/image/iPhone/iphone16-azul.jpg&#x27;
+      ],
+      colors: [&#x27;Rosa&#x27;, &#x27;Negro&#x27;, &#x27;Blanco&#x27;, &#x27;Verde&#x27;, &#x27;Azul&#x27;],
+      capacities: [&#x27;128GB&#x27;, &#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Bionic&#x27;,
+      price: [&#x27;899€&#x27;, &#x27;999€&#x27;, &#x27;1099€&#x27;, &#x27;1299€&#x27;]
+    },
+    {
+      id: &#x27;2&#x27;,
+      name: &#x27;iPhone 16 Pro&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-pro-natural.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-blanco.jpg&#x27;,
+        &#x27;assets/image/iPhone/iphone16-pro-desierto.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-negro.jpg&#x27;
+      ],
+      colors: [&#x27;Natural&#x27;, &#x27;Blanco&#x27;, &#x27;Desierto&#x27;, &#x27;Negro&#x27;],
+      capacities: [&#x27;128GB&#x27;, &#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Pro&#x27;,
+      price: [&#x27;1199€&#x27;, &#x27;1299€&#x27;, &#x27;1499€&#x27;, &#x27;1699€&#x27;]
+    },
+    {
+      id: &#x27;3&#x27;,
+      name: &#x27;iPhone 16 Pro Max&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-pro-natural.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-blanco.jpg&#x27;,
+        &#x27;assets/image/iPhone/iphone16-pro-desierto.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-negro.jpg&#x27;
+      ],
+      colors: [&#x27;Natural&#x27;, &#x27;Blanco&#x27;, &#x27;Desierto&#x27;, &#x27;Negro&#x27;],
+      capacities: [&#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Pro&#x27;,
+      price: [&#x27;1399€&#x27;, &#x27;1599€&#x27;, &#x27;1899€&#x27;]
+    }
+  ]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="39" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:39</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelos JSON de los móviles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="modelosCombinados"></a>
+                    <span class="name">
+                        <span ><b>modelosCombinados</b></span>
+                        <a href="#modelosCombinados"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>string[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="78" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:78</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="news"></a>
+                    <span class="name">
+                        <span ><b>news</b></span>
+                        <a href="#news"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="36" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:36</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de noticias</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reserva"></a>
+                    <span class="name">
+                        <span ><b>reserva</b></span>
+                        <a href="#reserva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="30" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:30</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Reservar</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="samsung"></a>
+                    <span class="name">
+                        <span ><b>samsung</b></span>
+                        <a href="#samsung"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="27" class="link-to-prism">src/app/components/catalogo-apple/catalogo-apple.component.ts:27</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Samsung</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { MarcasService } from &#x27;../../services/marca/marcas.services&#x27;;
+import { HostListener } from &#x27;@angular/core&#x27;;
+
+/**
+ * @description Componente que representa el catálogo de productos Apple.
+ * @export
+ * @class CatalogoAppleComponent
+ * @implements {OnInit}
+ */
+
+@Component({
+  selector: &#x27;app-catalogo-apple&#x27;,
+  standalone: true,
+  imports: [RouterModule, CommonModule],
+  templateUrl: &#x27;./catalogo-apple.component.html&#x27;,
+  styleUrls: [&#x27;./catalogo-apple.component.css&#x27;]
+})
+export class CatalogoAppleComponent implements OnInit {
+
+  /**Nombre de Apple */
+  apple: string;
+  
+  /**Nombre de Samsung */
+  samsung: string;
+
+  /**Nombre de Reservar */
+  reserva: string;
+
+  /**Nombre de Home */
+  home: string; 
+
+  /**Nombre de noticias */
+  news: string;
+
+  /**Modelos JSON de los móviles */
+  modelos &#x3D; [
+    {
+      id: &#x27;1&#x27;,
+      name: &#x27;iPhone 16&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-rosa.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-negro.jpg&#x27;,&#x27;assets/image/iPhone/iphone16-blanco.jpg&#x27;
+        ,&#x27;assets/image/iPhone/iphone16-verde.jpg&#x27;,&#x27;assets/image/iPhone/iphone16-azul.jpg&#x27;
+      ],
+      colors: [&#x27;Rosa&#x27;, &#x27;Negro&#x27;, &#x27;Blanco&#x27;, &#x27;Verde&#x27;, &#x27;Azul&#x27;],
+      capacities: [&#x27;128GB&#x27;, &#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Bionic&#x27;,
+      price: [&#x27;899€&#x27;, &#x27;999€&#x27;, &#x27;1099€&#x27;, &#x27;1299€&#x27;]
+    },
+    {
+      id: &#x27;2&#x27;,
+      name: &#x27;iPhone 16 Pro&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-pro-natural.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-blanco.jpg&#x27;,
+        &#x27;assets/image/iPhone/iphone16-pro-desierto.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-negro.jpg&#x27;
+      ],
+      colors: [&#x27;Natural&#x27;, &#x27;Blanco&#x27;, &#x27;Desierto&#x27;, &#x27;Negro&#x27;],
+      capacities: [&#x27;128GB&#x27;, &#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Pro&#x27;,
+      price: [&#x27;1199€&#x27;, &#x27;1299€&#x27;, &#x27;1499€&#x27;, &#x27;1699€&#x27;]
+    },
+    {
+      id: &#x27;3&#x27;,
+      name: &#x27;iPhone 16 Pro Max&#x27;,
+      image: [&#x27;assets/image/iPhone/iphone16-pro-natural.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-blanco.jpg&#x27;,
+        &#x27;assets/image/iPhone/iphone16-pro-desierto.jpg&#x27;, &#x27;assets/image/iPhone/iphone16-pro-negro.jpg&#x27;
+      ],
+      colors: [&#x27;Natural&#x27;, &#x27;Blanco&#x27;, &#x27;Desierto&#x27;, &#x27;Negro&#x27;],
+      capacities: [&#x27;256GB&#x27;, &#x27;512GB&#x27;, &#x27;1TB&#x27;],
+      operating_system: &#x27;iOS&#x27;,
+      chip: &#x27;A18 Pro&#x27;,
+      price: [&#x27;1399€&#x27;, &#x27;1599€&#x27;, &#x27;1899€&#x27;]
+    }
+  ];
+
+  modelosCombinados: string[] &#x3D; [];
+
+    /**
+   * @description Constructor del componente.
+   * @param {MarcasService} marcasService Servicio que gestiona los nombres de la cabecera.
+   */
+
+  constructor(private marcasService: MarcasService) {
+    this.apple &#x3D; this.marcasService.apple;
+    this.samsung &#x3D; this.marcasService.samsung;
+    this.reserva &#x3D; this.marcasService.reserva;
+    this.home &#x3D; this.marcasService.home;
+    this.news &#x3D; this.marcasService.news;
+  }
+
+  lastScrollTop: number &#x3D; 0;
+  
+  ngOnInit(): void {
+
+    this.hideHeaderOnScroll();
+
+    this.modelos.forEach(modelo &#x3D;&gt; {
+      modelo.colors.forEach(color &#x3D;&gt; {
+        modelo.capacities.forEach(capacidad &#x3D;&gt; {
+          this.modelosCombinados.push(&#x60;${modelo.name} ${color} ${capacidad}&#x60;);
+        });
+      });
+    });
+  }
+
+/**
+   * @description Método para detectar el scroll y ocultar/mostrar la cabecera.
+   * @memberof CatalogoAppleComponent
+   */
+
+  @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])
+  onWindowScroll() {
+    this.hideHeaderOnScroll();
+  }
+
+  /**
+   * @description Método que maneja el comportamiento de la cabecera.
+   * @memberof CatalogoAppleComponent
+   */
+  hideHeaderOnScroll() {
+    let currentScroll &#x3D; window.pageYOffset || document.documentElement.scrollTop;
+    const header &#x3D; document.querySelector(&#x27;.cabecera&#x27;) as HTMLElement;
+
+    if (currentScroll &gt; this.lastScrollTop) {
+      header.classList.add(&#x27;hide&#x27;);
+    } else {
+      header.classList.remove(&#x27;hide&#x27;);
+    }
+    
+    this.lastScrollTop &#x3D; currentScroll &lt;&#x3D; 0 ? 0 : currentScroll; // Para evitar valores negativos
+  }
+  
+
+  /**
+   * 
+   * @description Método para obtener el nombre del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+   getNumMoviles(): number {
+    return this.modelosCombinados.length;
+  }
+
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la imagen del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  getImageForModel(modeloCombinado: string): string {
+    const nombreModelo &#x3D; this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo (iPhone 16, iPhone 16 Pro, etc.)
+    const modelo &#x3D; this.modelos.find(m &#x3D;&gt; m.name &#x3D;&#x3D;&#x3D; nombreModelo); // Buscar el modelo correspondiente en el array
+    if (modelo) {
+      const colorSeleccionado &#x3D; this.getColor(modeloCombinado); // Obtener el color seleccionado
+      const colorIndex &#x3D; modelo.colors.indexOf(colorSeleccionado); // Obtener el índice del color seleccionado
+      console.log(&#x27;Modelo:&#x27;, nombreModelo, &#x27;| Color:&#x27;, colorSeleccionado, &#x27;| Índice:&#x27;, colorIndex);
+      return modelo.image[colorIndex] || &#x27;&#x27;; // Devolver la imagen correspondiente al índice
+    }
+    console.log(&#x27;Modelo no encontrado para imagen:&#x27;, modeloCombinado);
+    return &#x27;&#x27;;
+  }
+  
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el color del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  getColor(modeloCombinado: string): string {
+    const nombreModelo &#x3D; this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo
+    const modelo &#x3D; this.modelos.find(m &#x3D;&gt; m.name &#x3D;&#x3D;&#x3D; nombreModelo); // Buscar el modelo correspondiente
+    if (modelo) {
+      const colorSeleccionado &#x3D; modeloCombinado.split(&#x27; &#x27;).slice(-2, -1)[0]; // Extraer el color del modelo combinado
+      const colorIndex &#x3D; modelo.colors.indexOf(colorSeleccionado); // Buscar el índice del color
+      console.log(&#x27;Modelo:&#x27;, nombreModelo, &#x27;| Color Seleccionado:&#x27;, colorSeleccionado, &#x27;| Índice:&#x27;, colorIndex);
+      return modelo.colors[colorIndex] || &#x27;&#x27;; // Retornar el color correspondiente
+    }
+    console.log(&#x27;Modelo no encontrado para color:&#x27;, modeloCombinado);
+    return &#x27;&#x27;;
+  }
+  
+  
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el chip del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  getChip(modeloCombinado: string): string {
+    const nombreModelo &#x3D; this.getNombreModelo(modeloCombinado);
+    const modelo &#x3D; this.modelos.find(m &#x3D;&gt; m.name &#x3D;&#x3D;&#x3D; nombreModelo);
+    console.log(&#x27;Modelo:&#x27;, nombreModelo, &#x27;| Chip:&#x27;, modelo?.chip || &#x27;No encontrado&#x27;);
+    return modelo ? modelo.chip : &#x27;&#x27;;
+  }
+
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el sistema operativo del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  private getNombreModelo(modeloCombinado: string): string {
+    return modeloCombinado.includes(&#x27;Pro Max&#x27;)
+      ? &#x27;iPhone 16 Pro Max&#x27;
+      : modeloCombinado.includes(&#x27;Pro&#x27;)
+      ? &#x27;iPhone 16 Pro&#x27;
+      : &#x27;iPhone 16&#x27;;
+  }
+
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el precio del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  getPrice(modeloCombinado: string): string {
+    const nombreModelo &#x3D; this.getNombreModelo(modeloCombinado);
+    const modelo &#x3D; this.modelos.find(m &#x3D;&gt; m.name &#x3D;&#x3D;&#x3D; nombreModelo);
+    if (modelo) {
+      const capacidadSeleccionada &#x3D; this.getCapacity(modeloCombinado);
+      const capacidadIndex &#x3D; modelo.capacities.indexOf(capacidadSeleccionada);
+      console.log(&#x27;Modelo:&#x27;, nombreModelo, &#x27;| Capacidad:&#x27;, capacidadSeleccionada, &#x27;| Índice:&#x27;, capacidadIndex);
+      return modelo.price[capacidadIndex] || &#x27;&#x27;;
+    }
+    console.log(&#x27;Modelo no encontrado para precio:&#x27;, modeloCombinado);
+    return &#x27;&#x27;;
+  }
+
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la capacidad del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
+  getCapacity(modeloCombinado: string): string {
+    const nombreModelo &#x3D; this.getNombreModelo(modeloCombinado);
+    const modelo &#x3D; this.modelos.find(m &#x3D;&gt; m.name &#x3D;&#x3D;&#x3D; nombreModelo);
+    if (modelo) {
+      const capacidadSeleccionada &#x3D; modelo.capacities.find(cap &#x3D;&gt; modeloCombinado.includes(cap));
+      console.log(&#x27;Modelo:&#x27;, nombreModelo, &#x27;| Capacidad seleccionada:&#x27;, capacidadSeleccionada || &#x27;No encontrada&#x27;);
+      return capacidadSeleccionada || &#x27;&#x27;;
+    }
+    console.log(&#x27;Modelo no encontrado para capacidad:&#x27;, modeloCombinado);
+    return &#x27;&#x27;;
+  }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">&lt;!-- catalogo-apple.component.html --&gt;
+&lt;header class&#x3D;&quot;cabecera&quot;&gt;
+    &lt;div class&#x3D;&quot;imagenLogo&quot;&gt;
+        &lt;a routerLink&#x3D;&quot;/home&quot;&gt;
+            &lt;img class&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/logo_transparent_modoBlanco.png&quot; width&#x3D;&quot;110&quot; alt&#x3D;&quot;Logo empresa&quot; title&#x3D;&quot;Smartcell&quot;&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        
+        &lt;a routerLink&#x3D;&quot;/home&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ home }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/catalogo-apple&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ apple }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/catalogo-samsung&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ samsung }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/reserva&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ reserva }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/news&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ news }}&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;iconosNav&quot;&gt;
+        &lt;a href&#x3D;&quot;#busqueda&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/busqueda-negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;#carrito&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/bolsa-de-la-compra-negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;#usuario&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/usuario_negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;main class&#x3D;&quot;catalogo&quot;&gt;
+    &lt;h1&gt;Catálogo {{ apple }}&lt;/h1&gt;
+     &lt;p&gt;Total de resultados de la búsqueda: {{ getNumMoviles() }}&lt;/p&gt;
+    &lt;div *ngFor&#x3D;&quot;let modeloCombinado of modelosCombinados&quot; class&#x3D;&quot;modelo&quot;&gt;
+        &lt;a class&#x3D;&quot;titMovil&quot; href&#x3D;&quot;&quot;&gt;{{ modeloCombinado }}&lt;/a&gt;
+        &lt;img [src]&#x3D;&quot;getImageForModel(modeloCombinado)&quot; alt&#x3D;&quot;Imagen del modelo&quot;&gt;
+        &lt;div class&#x3D;&quot;bottom&quot;&gt;
+            &lt;div class&#x3D;&quot;precioYBoton&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;&lt;/strong&gt;&lt;span class&#x3D;&quot;precio&quot;&gt; {{ getPrice(modeloCombinado) }} &lt;/span&gt;&lt;/p&gt;
+                &lt;a class&#x3D;&quot;botonComprar&quot; href&#x3D;&quot;&quot;&gt;Añadir a la cesta&lt;/a&gt;
+            &lt;/div&gt;
+            &lt;div class&#x3D;&quot;detalles&quot;&gt;
+                &lt;p&gt;&lt;strong&gt;Modelo:&lt;/strong&gt; {{ modeloCombinado.split(&quot; &quot;)[0] }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Capacidad:&lt;/strong&gt; {{ getCapacity(modeloCombinado) }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Color:&lt;/strong&gt; {{ getColor(modeloCombinado) }}&lt;/p&gt;
+                &lt;p&gt;&lt;strong&gt;Chip:&lt;/strong&gt; {{ getChip(modeloCombinado) }}&lt;/p&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;  
+&lt;/main&gt;
+
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./catalogo-apple.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    font-family: &#x27;Plus Jakarta Sans&#x27;, Arial;
+   
+}
+
+@font-face {
+    
+    font-family: &#x27;Plus Jakarta Sans&#x27;;
+    src: url(&#x27;/src/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf&#x27;) format(&#x27;&#x27;);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cabecera {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0);
+ 
+  
+  }
+  
+  .cabecera:hover {
+    background-color: rgba(255, 255, 255, 0.919);
+  }
+  
+  .cabecera.hide {
+    top: -80px; /* Ajusta la altura para ocultar la cabecera */
+  }
+  
+  .imagenLogo {
+    padding-left: 50px;
+  }
+  
+  .marcas:hover {
+    outline: 2px solid rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+  }
+  
+  .marcas.active {
+    color: rgba(16, 94, 220, 0.729);
+  }
+  
+  /*Texto de la cabecera (marcas)*/
+  .marcas{
+    text-decoration: none;
+    font-size: 17px;
+    font-weight: 550;
+    color: rgb(64, 64, 64);
+    padding: 5px 10px;
+
+}
+  
+  .iconosNav {
+    padding-right: 50px;
+  }
+  
+  .iconosNav img {
+    margin: 5px 10px;
+  }
+  
+
+.catalogo {
+    padding-top: 70px;
+    padding-bottom: 30px;
+    margin-left: 15%;
+    margin-right: 15%;
+    color: #333;
+    display: grid; /* Activamos el grid para los modelos */
+    grid-template-columns: 1fr; 
+    gap: 20px; /* Espaciado entre los elementos */
+     /* Centra los items dentro de cada celda */
+}
+
+.modelo {
+    border: 1px solid #c7c7c7;
+    padding: 15px;
+    background-color: #ffffff;
+    display: flex; /* Usamos flexbox para los modelos */
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%; /* Hace que el modelo ocupe el 100% del ancho del contenedor */
+}
+
+.modelo img {
+    width: 20%;
+    height: auto;
+}
+
+.modelo:hover {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    text-align: center;
+}
+
+.bottom{
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+    gap: 300px;
+}
+
+.detalles {
+    display: grid; 
+    grid-template-columns: 1fr 1fr; 
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.detalles ul {
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+
+.titMovil{
+    text-decoration: none;
+    color: black;
+    font-size: 25px;
+}
+
+.detalles li {
+    margin-bottom: 5px;
+}
+
+.precio{
+    font-size: 30px;
+}
+
+.precioYBoton{
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 20px;
+}
+
+.botonComprar {
+    text-decoration: none;
+    font-size: 20px;
+    color: rgb(255, 255, 255);
+    padding: 10px;
+    padding-left: 40px;
+    padding-right: 40px;
+    background-color: rgba(16, 94, 220, 0.729);
+}
+
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><!-- catalogo-apple.component.html --><header class="cabecera">    <div class="imagenLogo">        <a routerLink="/home">            <img class="logoHome" src="assets/image/logo_transparent_modoBlanco.png" width="110" alt="Logo empresa" title="Smartcell">        </a>    </div>    <div>                <a routerLink="/home" routerLinkActive="active" class="marcas">{{ home }}</a>        <a routerLink="/catalogo-apple" routerLinkActive="active" class="marcas">{{ apple }}</a>        <a routerLink="/catalogo-samsung" routerLinkActive="active" class="marcas">{{ samsung }}</a>        <a routerLink="/reserva" routerLinkActive="active" class="marcas">{{ reserva }}</a>        <a routerLink="/news" routerLinkActive="active" class="marcas">{{ news }}</a>    </div>    <div class="iconosNav">        <a href="#busqueda"><img id="logoHome" src="assets/image/busqueda-negro.png" width="22"></a>        <a href="#carrito"><img id="logoHome" src="assets/image/bolsa-de-la-compra-negro.png" width="22"></a>        <a href="#usuario"><img id="logoHome" src="assets/image/usuario_negro.png" width="22"></a>    </div></header><main class="catalogo">    <h1>Catálogo {{ apple }}</h1>     <p>Total de resultados de la búsqueda: {{ getNumMoviles() }}</p>    <div *ngFor="let modeloCombinado of modelosCombinados" class="modelo">        <a class="titMovil" href="">{{ modeloCombinado }}</a>        <img [src]="getImageForModel(modeloCombinado)" alt="Imagen del modelo">        <div class="bottom">            <div class="precioYBoton">                <p><strong></strong><span class="precio"> {{ getPrice(modeloCombinado) }} </span></p>                <a class="botonComprar" href="">Añadir a la cesta</a>            </div>            <div class="detalles">                <p><strong>Modelo:</strong> {{ modeloCombinado.split(" ")[0] }}</p>                <p><strong>Capacidad:</strong> {{ getCapacity(modeloCombinado) }}</p>                <p><strong>Color:</strong> {{ getColor(modeloCombinado) }}</p>                <p><strong>Chip:</strong> {{ getChip(modeloCombinado) }}</p>            </div>        </div>    </div>  </main></div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoAppleComponent', 'selector': 'app-catalogo-apple'},{'name': 'CatalogoSamsungComponent', 'selector': 'app-catalogo-samsung'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ReservaComponent', 'selector': 'app-reserva'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'CatalogoAppleComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'CatalogoAppleComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>

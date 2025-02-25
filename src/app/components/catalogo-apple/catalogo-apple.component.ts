@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MarcasService } from '../../services/marca/marcas.services';
+import { HostListener } from '@angular/core';
+
+/**
+ * @description Componente que representa el catálogo de productos Apple.
+ * @export
+ * @class CatalogoAppleComponent
+ * @implements {OnInit}
+ */
 
 @Component({
   selector: 'app-catalogo-apple',
@@ -11,12 +19,23 @@ import { MarcasService } from '../../services/marca/marcas.services';
   styleUrls: ['./catalogo-apple.component.css']
 })
 export class CatalogoAppleComponent implements OnInit {
+
+  /**Nombre de Apple */
   apple: string;
+  
+  /**Nombre de Samsung */
   samsung: string;
+
+  /**Nombre de Reservar */
   reserva: string;
+
+  /**Nombre de Home */
   home: string; 
+
+  /**Nombre de noticias */
   news: string;
 
+  /**Modelos JSON de los móviles */
   modelos = [
     {
       id: '1',
@@ -58,6 +77,11 @@ export class CatalogoAppleComponent implements OnInit {
 
   modelosCombinados: string[] = [];
 
+    /**
+   * @description Constructor del componente.
+   * @param {MarcasService} marcasService Servicio que gestiona los nombres de la cabecera.
+   */
+
   constructor(private marcasService: MarcasService) {
     this.apple = this.marcasService.apple;
     this.samsung = this.marcasService.samsung;
@@ -66,7 +90,12 @@ export class CatalogoAppleComponent implements OnInit {
     this.news = this.marcasService.news;
   }
 
+  lastScrollTop: number = 0;
+  
   ngOnInit(): void {
+
+    this.hideHeaderOnScroll();
+
     this.modelos.forEach(modelo => {
       modelo.colors.forEach(color => {
         modelo.capacities.forEach(capacidad => {
@@ -75,12 +104,51 @@ export class CatalogoAppleComponent implements OnInit {
       });
     });
   }
+
+/**
+   * @description Método para detectar el scroll y ocultar/mostrar la cabecera.
+   * @memberof CatalogoAppleComponent
+   */
+
+  @HostListener('window:scroll', ['$event'])
+  onWindowScroll() {
+    this.hideHeaderOnScroll();
+  }
+
+  /**
+   * @description Método que maneja el comportamiento de la cabecera.
+   * @memberof CatalogoAppleComponent
+   */
+  hideHeaderOnScroll() {
+    let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+    const header = document.querySelector('.cabecera') as HTMLElement;
+
+    if (currentScroll > this.lastScrollTop) {
+      header.classList.add('hide');
+    } else {
+      header.classList.remove('hide');
+    }
+    
+    this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+  }
   
-   // Contamos el número de modelos combinados
+
+  /**
+   * 
+   * @description Método para obtener el nombre del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
    getNumMoviles(): number {
     return this.modelosCombinados.length;
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la imagen del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   getImageForModel(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo (iPhone 16, iPhone 16 Pro, etc.)
     const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente en el array
@@ -94,7 +162,12 @@ export class CatalogoAppleComponent implements OnInit {
     return '';
   }
   
-  
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el color del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   getColor(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo
     const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente
@@ -109,8 +182,12 @@ export class CatalogoAppleComponent implements OnInit {
   }
   
   
-  
-
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el chip del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   getChip(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);
@@ -118,6 +195,12 @@ export class CatalogoAppleComponent implements OnInit {
     return modelo ? modelo.chip : '';
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el sistema operativo del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   private getNombreModelo(modeloCombinado: string): string {
     return modeloCombinado.includes('Pro Max')
       ? 'iPhone 16 Pro Max'
@@ -126,6 +209,12 @@ export class CatalogoAppleComponent implements OnInit {
       : 'iPhone 16';
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el precio del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   getPrice(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);
@@ -139,6 +228,12 @@ export class CatalogoAppleComponent implements OnInit {
     return '';
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la capacidad del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoAppleComponent
+   */
   getCapacity(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);
