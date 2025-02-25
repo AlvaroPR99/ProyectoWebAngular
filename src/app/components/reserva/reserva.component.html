@@ -1,1 +1,89 @@
-<p>reserva works!</p>
+<header class="cabecera">
+    <div class="imagenLogo">
+        <a routerLink="/home">
+            <img id="logoHome" src="assets/image/logo_transparent_modoBlanco.png" width="110" alt="Logo empresa" title="Smartcell">
+        </a>
+    </div>
+    <div>
+        
+        <a routerLink="/home" routerLinkActive="active" class="marcas">{{ home }}</a>
+        <a routerLink="/catalogo-apple" routerLinkActive="active" class="marcas">{{ apple }}</a>
+        <a routerLink="/catalogo-samsung" routerLinkActive="active" class="marcas">{{ samsung }}</a>
+        <a routerLink="/reserva" routerLinkActive="active" class="marcas">{{ reserva }}</a>
+        <a routerLink="/news" routerLinkActive="active" class="marcas">{{ news }}</a>
+    </div>
+    <div class="iconosNav">
+        <a href="#busqueda"><img id="logoHome" src="assets/image/busqueda-negro.png" width="22"></a>
+        <a href="#carrito"><img id="logoHome" src="assets/image/bolsa-de-la-compra-negro.png" width="22"></a>
+        <a href="#usuario"><img id="logoHome" src="assets/image/usuario_negro.png" width="22"></a>
+    </div>
+</header>
+
+<main>
+   
+    <section>
+        <h1>Reserva tu móvil</h1>
+        <p>Reserva tu móvil cuando quieras con nuestras opciones de reserva con recogida en tienda. Selecciona el modelo que más se adapte a tus necesidades, elige la capacidad que prefieras y realiza tu reserva de forma rápida y sencilla. Nos aseguraremos de que tu dispositivo esté listo para que lo recojas en nuestra tienda cuando tú lo decidas. ¡No te quedes sin tu nuevo móvil!</p>
+    </section>
+
+    <form [formGroup]="formulario" (ngSubmit)="enviarFormulario()">
+        <h1>DATOS PERSONALES</h1>
+        <div>
+          <input id="nombre" formControlName="nombre" required placeholder="Nombre">
+          <div class="condiciones" *ngIf="formulario.get('nombre')?.invalid && formulario.get('nombre')?.touched">
+            El nombre es obligatorio.
+          </div>
+        </div>
+
+        <div>
+            <input id="nombre" formControlName="apellidos" required placeholder="Apellidos">
+            <div class="condiciones" *ngIf="formulario.get('apellidos')?.invalid && formulario.get('apellidos')?.touched">
+              Los apellidos son obligatorios.
+            </div>
+          </div>
+
+          <div>
+            <input id="email" formControlName="email" required placeholder="Email">
+            <div class="condiciones" *ngIf="formulario.get('email')?.invalid && formulario.get('email')?.touched">
+              El email es obligatorio.
+            </div>
+          </div>
+
+          <div>
+            <input id="number" formControlName="number" required placeholder="Teléfono">
+            <div class="condiciones" *ngIf="formulario.get('number')?.invalid && formulario.get('number')?.touched">
+              Introduzca el número correctamente.
+            </div>
+          </div>
+    
+      
+        <div>
+          <select id="movil" formControlName="movil" required>
+            <option class="opcionPredeterminada" value="">Seleccione un modelo</option>
+            <option *ngFor="let modelo of modelos" [value]="modelo">{{ modelo }}</option>
+          </select>
+          <div class="condiciones" *ngIf="formulario.get('movil')?.invalid && formulario.get('movil')?.touched">
+            El modelo es obligatorio.
+          </div>
+        </div>
+      
+        <div>
+
+          <select id="capacidad" formControlName="capacidad" required>
+            <option class="opcionPredeterminada" value="">Seleccione una capacidad</option>
+            <option *ngFor="let capacidad of capacidadesDisponibles" [value]="capacidad">{{ capacidad }}</option>
+          </select>
+          <div class="condiciones" *ngIf="formulario.get('capacidad')?.invalid && formulario.get('capacidad')?.touched">
+            La capacidad es obligatoria.
+          </div>
+        </div>
+      
+        <div>
+          <label for="comentarios">Comentarios:</label>
+          <textarea id="comentarios" formControlName="comentarios"></textarea>
+        </div>
+      
+        <button type="submit" [disabled]="formulario.invalid">Reservar</button>
+      </form>
+     
+</main>

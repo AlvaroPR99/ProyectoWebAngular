@@ -2,6 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MarcasService } from '../../services/marca/marcas.services';
+import { HostListener } from '@angular/core';
+
+/**
+ * @description Componente que representa el catálogo de productos Samsung.
+ * @export
+ * @class CatalogoSamsungComponent
+ * @implements {OnInit}
+ */
 
 @Component({
   selector: 'app-catalogo-samsung',
@@ -11,12 +19,23 @@ import { MarcasService } from '../../services/marca/marcas.services';
   styleUrls: ['./catalogo-samsung.component.css']
 })
 export class CatalogoSamsungComponent implements OnInit {
+
+  /**Nombre de Apple */
   apple: string;
+
+  /**Nombre de Samsung */
   samsung: string;
+
+  /**Nombre de Reservar */
   reserva: string;
+
+  /**Nombre de Home */
   home: string; 
+
+  /**Nombre de noticias */
   news: string;
 
+  /**Modelos JSON de los móviles */
   modelos = [
     {
       id: '1',
@@ -34,6 +53,10 @@ export class CatalogoSamsungComponent implements OnInit {
 
   modelosCombinados: string[] = [];
 
+    /**
+   * @description Constructor del componente.
+   * @param {MarcasService} marcasService Servicio que gestiona los nombres de la cabecera.
+   */
   constructor(private marcasService: MarcasService) {
     this.apple = this.marcasService.apple;
     this.samsung = this.marcasService.samsung;
@@ -42,7 +65,12 @@ export class CatalogoSamsungComponent implements OnInit {
     this.news = this.marcasService.news;
   }
 
+  lastScrollTop: number = 0;
+  
   ngOnInit(): void {
+
+    this.hideHeaderOnScroll();
+
     this.modelos.forEach(modelo => {
       modelo.colors.forEach(color => {
         modelo.capacities.forEach(capacidad => {
@@ -51,12 +79,49 @@ export class CatalogoSamsungComponent implements OnInit {
       });
     });
   }
+
+  /**
+   * @description Método para detectar el scroll y ocultar/mostrar la cabecera.
+   * @memberof CatalogoSamsungComponent
+   */
+    @HostListener('window:scroll', ['$event'])
+    onWindowScroll() {
+      this.hideHeaderOnScroll();
+    }
   
-   // Contamos el número de modelos combinados
+    /**
+   * @description Método que maneja el comportamiento de la cabecera.
+   * @memberof CatalogoSamsungComponent
+   */
+    hideHeaderOnScroll() {
+      let currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      const header = document.querySelector('.cabecera') as HTMLElement;
+  
+      if (currentScroll > this.lastScrollTop) {
+        header.classList.add('hide');
+      } else {
+        header.classList.remove('hide');
+      }
+      
+      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+    }
+  
+     /**
+   * 
+   * @description Método para obtener el nombre del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
    getNumMoviles(): number {
     return this.modelosCombinados.length;
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la imagen del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   getImageForModel(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo (iPhone 16, iPhone 16 Pro, etc.)
     const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente en el array
@@ -70,7 +135,12 @@ export class CatalogoSamsungComponent implements OnInit {
     return '';
   }
   
-  
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el color del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   getColor(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo
     const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente
@@ -85,8 +155,12 @@ export class CatalogoSamsungComponent implements OnInit {
   }
   
   
-  
-
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el chip del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   getChip(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);
@@ -94,6 +168,12 @@ export class CatalogoSamsungComponent implements OnInit {
     return modelo ? modelo.chip : '';
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener el sistema operativo del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   private getNombreModelo(modeloCombinado: string): string {
     // Busca el modelo base en la lista de nombres de modelos
     const modelo = this.modelos.find(m => modeloCombinado.startsWith(m.name));
@@ -101,6 +181,12 @@ export class CatalogoSamsungComponent implements OnInit {
   }
   
 
+   /**
+   * 
+   * @param modeloCombinado Método para obtener el precio del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   getPrice(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);
@@ -114,6 +200,12 @@ export class CatalogoSamsungComponent implements OnInit {
     return '';
   }
 
+  /**
+   * 
+   * @param modeloCombinado Método para obtener la capacidad del modelo seleccionado.
+   * @returns 
+   * @memberof CatalogoSamsungComponent
+   */
   getCapacity(modeloCombinado: string): string {
     const nombreModelo = this.getNombreModelo(modeloCombinado);
     const modelo = this.modelos.find(m => m.name === nombreModelo);

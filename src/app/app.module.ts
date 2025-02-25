@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router'; // Importa RouterModule y Routes
 import { HttpClientModule } from '@angular/common/http'; // Si usas HttpClient
 
-// Importa tus componentes
+
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
@@ -24,16 +24,16 @@ const routes: Routes = [
     HomeComponent,
     CatalogoAppleComponent,
     CatalogoSamsungComponent,
-    ReservaComponent,
+    ReservaComponent, 
     NewsComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
-    RouterModule.forRoot(routes), // Configura las rutas
-    HttpClientModule // Si usas HttpClient
+    RouterModule.forRoot(routes),
+    HttpClientModule
   ],
   providers: [],
-  bootstrap: [AppComponent] // Componente raíz
+  bootstrap: [AppComponent] 
 })
 export class AppModule {}

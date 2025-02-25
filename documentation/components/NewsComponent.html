@@ -1,0 +1,1199 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>project-web-angular documentation</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <link rel="icon" type="image/x-icon" href="../images/favicon.ico">
+	   <link rel="stylesheet" href="../styles/style.css">
+        <link rel="stylesheet" href="../styles/dark.css">
+    </head>
+    <body>
+          <script>
+               // Blocking script to avoid flickering dark mode
+               // Dark mode toggle button
+               var useDark = window.matchMedia('(prefers-color-scheme: dark)');
+               var darkModeState = useDark.matches;
+               var $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               var $darkModeToggles = document.querySelectorAll('.dark-mode-switch');
+               var darkModeStateLocal = localStorage.getItem('compodoc_darkmode-state');
+
+               function checkToggle(check) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].checked = check;
+                    }
+               }
+
+               function toggleDarkMode(state) {
+                    if (window.localStorage) {
+                         localStorage.setItem('compodoc_darkmode-state', state);
+                    }
+
+                    checkToggle(state);
+
+                    const hasClass = document.body.classList.contains('dark');
+
+                    if (state) {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.add('dark');
+                         }
+                         if (!hasClass) {
+                              document.body.classList.add('dark');
+                         }
+                    } else {
+                         for (var i = 0; i < $darkModeToggles.length; i++) {
+                              $darkModeToggles[i].classList.remove('dark');
+                         }
+                         if (hasClass) {
+                              document.body.classList.remove('dark');
+                         }
+                    }
+               }
+
+               useDark.addEventListener('change', function (evt) {
+                    toggleDarkMode(evt.matches);
+               });
+               if (darkModeStateLocal) {
+                    darkModeState = darkModeStateLocal === 'true';
+               }
+               toggleDarkMode(darkModeState);
+          </script>
+
+        <div class="navbar navbar-default navbar-fixed-top d-md-none p-0">
+               <div class="d-flex">
+                    <a href="../" class="navbar-brand">project-web-angular documentation</a>
+                    <button type="button" class="btn btn-default btn-menu ion-ios-menu" id="btn-menu"></button>
+               </div>
+        </div>
+
+        <div class="xs-menu menu" id="mobile-menu">
+                <div id="book-search-input" role="search"><input type="text" placeholder="Type to search"></div>            <compodoc-menu></compodoc-menu>
+        </div>
+
+        <div class="container-fluid main">
+           <div class="row main">
+               <div class="d-none d-md-block menu">
+                   <compodoc-menu mode="normal"></compodoc-menu>
+               </div>
+               <!-- START CONTENT -->
+               <div class="content component">
+                   <div class="content-data">
+
+
+
+
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">Components</li>
+  <li class="breadcrumb-item"
+  >
+  NewsComponent</li>
+</ol>
+
+<ul class="nav nav-tabs" role="tablist">
+        <li class="nav-item">
+            <a href="#info" class="nav-link active"
+                role="tab" id="info-tab" data-bs-toggle="tab" data-link="info">Info</a>
+        </li>
+        <li class="nav-item">
+            <a href="#source" class="nav-link"
+                role="tab" id="source-tab" data-bs-toggle="tab" data-link="source">Source</a>
+        </li>
+        <li class="nav-item">
+            <a href="#templateData" class="nav-link"
+                role="tab" id="templateData-tab" data-bs-toggle="tab" data-link="template">Template</a>
+        </li>
+        <li class="nav-item">
+            <a href="#styleData" class="nav-link"
+                role="tab" id="styleData-tab" data-bs-toggle="tab" data-link="style">Styles</a>
+        </li>
+        <li class="nav-item">
+            <a href="#tree" class="nav-link"
+                role="tab" id="tree-tab" data-bs-toggle="tab" data-link="dom-tree">DOM Tree</a>
+        </li>
+</ul>
+
+<div class="tab-content">
+    <div class="tab-pane fade active in" id="info"><p class="comment">
+    <h3>File</h3>
+</p>
+<p class="comment">
+    <code>src/app/components/news/news.component.ts</code>
+</p>
+
+
+
+
+    <p class="comment">
+        <h3>Implements</h3>
+    </p>
+    <p class="comment">
+                <code>OnInit</code>
+    </p>
+
+
+<section data-compodoc="block-metadata">
+    <h3>Metadata</h3>
+    <table class="table table-sm table-hover metadata">
+        <tbody>
+
+
+
+
+
+
+
+
+
+
+
+
+            <tr>
+                <td class="col-md-3">selector</td>
+                <td class="col-md-9"><code>app-news</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">standalone</td>
+                <td class="col-md-9"><code>true</code></td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">imports</td>
+                <td class="col-md-9">
+                            <code>RouterModule</code>
+                            <code>CommonModule</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-3">styleUrls</td>
+                <td class="col-md-9"><code>./news.component.css</code></td>
+            </tr>
+
+
+
+            <tr>
+                <td class="col-md-3">templateUrl</td>
+                <td class="col-md-9"><code>./news.component.html</code></td>
+            </tr>
+
+
+
+
+
+
+
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-index">
+    <h3 id="index">Index</h3>
+    <table class="table table-sm table-bordered index-table">
+        <tbody>
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Properties</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#apple" >apple</a>
+                            </li>
+                            <li>
+                                <a href="#home" >home</a>
+                            </li>
+                            <li>
+                                <a href="#lastScrollTop" >lastScrollTop</a>
+                            </li>
+                            <li>
+                                <a href="#news" >news</a>
+                            </li>
+                            <li>
+                                <a href="#noticias" >noticias</a>
+                            </li>
+                            <li>
+                                <a href="#reserva" >reserva</a>
+                            </li>
+                            <li>
+                                <a href="#samsung" >samsung</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>Methods</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#cargarNoticias" >cargarNoticias</a>
+                            </li>
+                            <li>
+                                <a href="#hideHeaderOnScroll" >hideHeaderOnScroll</a>
+                            </li>
+                            <li>
+                                <a href="#ngOnInit" >ngOnInit</a>
+                            </li>
+                            <li>
+                                    <span class="modifier"></span>
+                                <a href="#onWindowScroll" >onWindowScroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+
+
+
+                <tr>
+                    <td class="col-md-4">
+                        <h6><b>HostListeners</b></h6>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <ul class="index-list">
+                            <li>
+                                <a href="#window:scroll" >window:scroll</a>
+                            </li>
+                        </ul>
+                    </td>
+                </tr>
+
+        </tbody>
+    </table>
+</section>
+
+    <section data-compodoc="block-constructor">
+    <h3 id="constructor">Constructor</h3>
+        <table class="table table-sm table-bordered">
+            <tbody>
+                <tr>
+                    <td class="col-md-4">
+<code>constructor(marcasService: <a href="../injectables/MarcasService.html" target="_self">MarcasService</a>, newsService: <a href="../injectables/NewsService.html" target="_self">NewsService</a>)</code>
+                    </td>
+                </tr>
+                        <tr>
+                            <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/news/news.component.ts:40</a></div>
+                            </td>
+                        </tr>
+
+                <tr>
+                    <td class="col-md-4">
+                            <div>
+                                    <b>Parameters :</b>
+                                    <table class="params">
+                                        <thead>
+                                            <tr>
+                                                <td>Name</td>
+                                                    <td>Type</td>
+                                                <td>Optional</td>
+                                                    <td>Description</td>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                                <tr>
+                                                        <td>marcasService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/MarcasService.html" target="_self" >MarcasService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                                <p>Servicio que gestiona los nombres de la cabecera.</p>
+
+                                                        </td>
+                                                </tr>
+                                                <tr>
+                                                        <td>newsService</td>
+                                                  
+                                                        <td>
+                                                                        <code><a href="../injectables/NewsService.html" target="_self" >NewsService</a></code>
+                                                        </td>
+                                                  
+                                                    <td>
+                                                            No
+                                                    </td>
+                                                    
+                                                        <td>
+                                                        </td>
+                                                </tr>
+                                        </tbody>
+                                    </table>
+                            </div>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+</section>
+
+
+
+
+    <section data-compodoc="block-methods">
+    <h3>HostListeners</h3>    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="window:scroll"></a>
+                    <span class="name">
+                        <span ><b>window:scroll</b></span>
+                        <a href="#window:scroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                    <i>Arguments : </i><code>'$event' </code>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>window:scroll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/components/news/news.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-methods">
+    
+    <h3 id="methods">
+        Methods
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="cargarNoticias"></a>
+                    <span class="name">
+                        <span ><b>cargarNoticias</b></span>
+                        <a href="#cargarNoticias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>cargarNoticias()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="71"
+                                    class="link-to-prism">src/app/components/news/news.component.ts:71</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="hideHeaderOnScroll"></a>
+                    <span class="name">
+                        <span ><b>hideHeaderOnScroll</b></span>
+                        <a href="#hideHeaderOnScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>hideHeaderOnScroll()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="94"
+                                    class="link-to-prism">src/app/components/news/news.component.ts:94</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="ngOnInit"></a>
+                    <span class="name">
+                        <span ><b>ngOnInit</b></span>
+                        <a href="#ngOnInit"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+<code>ngOnInit()</code>
+                </td>
+            </tr>
+
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="61"
+                                    class="link-to-prism">src/app/components/news/news.component.ts:61</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="onWindowScroll"></a>
+                    <span class="name">
+                            <span class="modifier"></span>
+                        <span ><b>onWindowScroll</b></span>
+                        <a href="#onWindowScroll"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+            <tr>
+                <td class="col-md-4">
+                        <span class="modifier-icon icon ion-ios-reset"></span>
+                    <code>onWindowScroll()</code>
+                </td>
+            </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <b>Decorators : </b>
+                    <br />
+                    <code>@HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])<br /></code>
+                </td>
+            </tr>
+
+                    <tr>
+                        <td class="col-md-4">
+                            <div class="io-line">Defined in <a href="" data-line="86"
+                                    class="link-to-prism">src/app/components/news/news.component.ts:86</a></div>
+                        </td>
+                    </tr>
+
+
+            <tr>
+                <td class="col-md-4">
+
+                        <div class="io-description">
+                            <b>Returns : </b>        <code><a href="https://www.typescriptlang.org/docs/handbook/basic-types.html" target="_blank" >void</a></code>
+
+                        </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</section>
+    <section data-compodoc="block-properties">
+    
+    <h3 id="inputs">
+        Properties
+    </h3>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="apple"></a>
+                    <span class="name">
+                        <span ><b>apple</b></span>
+                        <a href="#apple"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="28" class="link-to-prism">src/app/components/news/news.component.ts:28</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Apple</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="home"></a>
+                    <span class="name">
+                        <span ><b>home</b></span>
+                        <a href="#home"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="25" class="link-to-prism">src/app/components/news/news.component.ts:25</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Home</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="lastScrollTop"></a>
+                    <span class="name">
+                        <span ><b>lastScrollTop</b></span>
+                        <a href="#lastScrollTop"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/number" target="_blank" >number</a></code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>0</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="59" class="link-to-prism">src/app/components/news/news.component.ts:59</a></div>
+                        </td>
+                    </tr>
+
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="news"></a>
+                    <span class="name">
+                        <span ><b>news</b></span>
+                        <a href="#news"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="37" class="link-to-prism">src/app/components/news/news.component.ts:37</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Apple</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="noticias"></a>
+                    <span class="name">
+                        <span ><b>noticias</b></span>
+                        <a href="#noticias"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>    <code>any[]</code>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Default value : </i><code>[]</code>
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="40" class="link-to-prism">src/app/components/news/news.component.ts:40</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Modelos JSON de los móviles</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="reserva"></a>
+                    <span class="name">
+                        <span ><b>reserva</b></span>
+                        <a href="#reserva"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="34" class="link-to-prism">src/app/components/news/news.component.ts:34</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Reservar</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+    <table class="table table-sm table-bordered">
+        <tbody>
+            <tr>
+                <td class="col-md-4">
+                    <a name="samsung"></a>
+                    <span class="name">
+                        <span ><b>samsung</b></span>
+                        <a href="#samsung"><span class="icon ion-ios-link"></span></a>
+                    </span>
+                </td>
+            </tr>
+                <tr>
+                    <td class="col-md-4">
+                        <i>Type : </i>        <code><a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/string" target="_blank" >string</a></code>
+
+                    </td>
+                </tr>
+                    <tr>
+                        <td class="col-md-4">
+                                <div class="io-line">Defined in <a href="" data-line="31" class="link-to-prism">src/app/components/news/news.component.ts:31</a></div>
+                        </td>
+                    </tr>
+
+            <tr>
+                <td class="col-md-4">
+                    <div class="io-description"><p>Nombre de Samsung</p>
+</div>
+                </td>
+            </tr>
+
+        </tbody>
+    </table>
+</section>
+
+</div>
+
+
+    <div class="tab-pane fade  tab-source-code" id="source">
+        <pre class="line-numbers compodoc-sourcecode"><code class="language-typescript">import { Component, OnInit } from &#x27;@angular/core&#x27;;
+import { NewsService } from &#x27;../../services/news/news.service&#x27;;
+import { RouterModule } from &#x27;@angular/router&#x27;;
+import { MarcasService } from &#x27;../../services/marca/marcas.services&#x27;;
+import { CommonModule } from &#x27;@angular/common&#x27;;
+import { HostListener } from &#x27;@angular/core&#x27;;
+
+/**
+ * @description Componente que representa el catálogo de productos Apple.
+ * @export
+ * @class NewsComponent
+ * @implements {OnInit}
+ */
+
+@Component({
+  selector: &#x27;app-news&#x27;,
+  standalone: true,
+  imports: [RouterModule, CommonModule], 
+  templateUrl: &#x27;./news.component.html&#x27;,
+  styleUrls: [&#x27;./news.component.css&#x27;] 
+})
+export class NewsComponent implements OnInit {
+  
+  /**Nombre de Home */
+  home: string;
+
+  /**Nombre de Apple */
+  apple: string;
+
+  /**Nombre de Samsung */
+  samsung: string;
+
+  /**Nombre de Reservar */
+  reserva: string;
+
+  /**Nombre de Apple */
+  news: string;
+
+  /**Modelos JSON de los móviles */
+  noticias: any[] &#x3D; [];
+
+  /**
+   * @description Constructor del componente.
+   * @param {MarcasService} marcasService Servicio que gestiona los nombres de la cabecera.
+   */
+
+  constructor(
+    private marcasService: MarcasService, // Servicio para las marcas
+    private newsService: NewsService // Servicio para las noticias
+  ) {
+
+    this.home &#x3D; this.marcasService.home;
+    this.apple &#x3D; this.marcasService.apple;
+    this.samsung &#x3D; this.marcasService.samsung;
+    this.reserva &#x3D; this.marcasService.reserva;
+    this.news &#x3D; this.marcasService.news;
+  }
+
+  lastScrollTop: number &#x3D; 0;
+
+  ngOnInit(): void {
+    this.cargarNoticias(); // Cargar noticias al inicializar el componente
+    this.hideHeaderOnScroll(); // Ocultar el header al hacer scroll
+  }
+
+  /**
+   * @description Método que mcarga todas las noticias de la API.
+   * @memberof NewsComponent
+   */
+
+  cargarNoticias(): void {
+    this.newsService.getData().subscribe({
+      next: (response) &#x3D;&gt; {
+        console.log(&#x27;Noticias cargadas:&#x27;, response);
+        this.noticias &#x3D; response.articles;  // Confirma que la estructura del JSON es correcta.
+      },
+      error: (error) &#x3D;&gt; console.error(&#x27;Error al cargar noticias:&#x27;, error)
+    });
+  }
+  /**
+   * @description Método para detectar el scroll y ocultar/mostrar la cabecera.
+   * @memberof NewsComponent
+   */
+
+    @HostListener(&#x27;window:scroll&#x27;, [&#x27;$event&#x27;])
+    onWindowScroll() {
+      this.hideHeaderOnScroll();
+    }
+    
+     /**
+   * @description Método que maneja el comportamiento de la cabecera.
+   * @memberof NewsComponent
+   */
+      hideHeaderOnScroll() {
+        let currentScroll &#x3D; window.pageYOffset || document.documentElement.scrollTop;
+        const header &#x3D; document.querySelector(&#x27;.cabecera&#x27;) as HTMLElement;
+    
+        if (currentScroll &gt; this.lastScrollTop) {
+          header.classList.add(&#x27;hide&#x27;);
+        } else {
+          header.classList.remove(&#x27;hide&#x27;);
+        }
+        
+        this.lastScrollTop &#x3D; currentScroll &lt;&#x3D; 0 ? 0 : currentScroll; // Para evitar valores negativos
+      }
+}
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="templateData">
+        <pre class="line-numbers"><code class="language-html">
+&lt;header class&#x3D;&quot;cabecera&quot;&gt;
+    &lt;div class&#x3D;&quot;imagenLogo&quot;&gt;
+        &lt;a routerLink&#x3D;&quot;/home&quot;&gt;
+            &lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/logo_transparent_modoBlanco.png&quot; width&#x3D;&quot;110&quot; alt&#x3D;&quot;Logo empresa&quot; title&#x3D;&quot;Smartcell&quot;&gt;
+        &lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div&gt;
+        &lt;a routerLink&#x3D;&quot;/home&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ home }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/catalogo-apple&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ apple }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/catalogo-samsung&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ samsung }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/reserva&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ reserva }}&lt;/a&gt;
+        &lt;a routerLink&#x3D;&quot;/news&quot; routerLinkActive&#x3D;&quot;active&quot; class&#x3D;&quot;marcas&quot;&gt;{{ news }}&lt;/a&gt;
+    &lt;/div&gt;
+    &lt;div class&#x3D;&quot;iconosNav&quot;&gt;
+        &lt;a href&#x3D;&quot;#busqueda&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/busqueda-negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;#carrito&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/bolsa-de-la-compra-negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+        &lt;a href&#x3D;&quot;#usuario&quot;&gt;&lt;img id&#x3D;&quot;logoHome&quot; src&#x3D;&quot;assets/image/usuario_negro.png&quot; width&#x3D;&quot;22&quot;&gt;&lt;/a&gt;
+    &lt;/div&gt;
+&lt;/header&gt;
+
+&lt;main&gt;
+    &lt;h1&gt;{{ news }}&lt;/h1&gt;
+    &lt;ul&gt;
+      &lt;li *ngFor&#x3D;&quot;let noticia of noticias&quot;&gt;
+        &lt;div class&#x3D;&quot;text&quot;&gt;
+        &lt;a [href]&#x3D;&quot;noticia.url&quot; target&#x3D;&quot;_blank&quot; class&#x3D;&quot;linkNews&quot;&gt;&lt;h3&gt;{{ noticia.title }}&lt;/h3&gt;&lt;/a&gt;
+        &lt;p class&#x3D;&quot;autor&quot;&gt;{{ noticia.author }}&lt;/p&gt;
+        &lt;p class&#x3D;&quot;fecha&quot;&gt;{{ noticia.publishedAt }}&lt;/p&gt;
+          &lt;p class&#x3D;&quot;descripcion&quot;&gt;{{ noticia.description }}&lt;/p&gt;
+        &lt;/div&gt;
+        &lt;img [src]&#x3D;&quot;noticia.urlToImage&quot; alt&#x3D;&quot;{{ noticia.title }}&quot; class&#x3D;&quot;imagen&quot; /&gt;
+      &lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/main&gt;
+  
+
+  </code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="styleData">
+                <p class="comment">
+                    <code>./news.component.css</code>
+                </p>
+                <pre class="line-numbers"><code class="language-scss">* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Asegura un comportamiento consistente de bordes y padding */
+    font-family: &#x27;Plus Jakarta Sans&#x27;, Arial;
+   
+}
+
+@font-face {
+    
+    font-family: &#x27;Plus Jakarta Sans&#x27;;
+    src: url(&#x27;/src/Plus_Jakarta_Sans/PlusJakartaSans-VariableFont_wght.ttf&#x27;) format(&#x27;&#x27;);
+    font-weight: normal;
+    font-style: normal;
+}
+
+.cabecera {
+    position: fixed;
+    top: 0; 
+    left: 0; 
+    right: 0;
+    width: 100%; 
+    z-index: 1000; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    background-color: rgba(255, 255, 255, 0);
+    
+}
+
+.cabecera:hover {
+  background-color: rgba(255, 255, 255, 0.919);
+}
+
+.cabecera.hide {
+  top: -80px; /* Ajusta la altura para ocultar la cabecera */
+}
+
+.imagenLogo{
+    padding-left: 50px;
+}
+
+.marcas:hover{
+    outline: 2px solid rgb(236, 236, 236);
+    background-color: rgb(236, 236, 236);
+}
+
+.marcas.active{
+    color: rgba(16, 94, 220, 0.729)
+}
+
+/*Texto de la cabecera (marcas)*/
+.marcas{
+  text-decoration: none;
+  font-size: 17px;
+  font-weight: 550;
+  color: rgb(64, 64, 64);
+  padding: 5px 10px;
+
+}
+
+.iconosNav{
+    padding-right: 50px;
+}
+
+.iconosNav img{
+    margin: 5px 10px;
+
+}
+
+main {
+  padding: 70px;
+  margin-left: 15%;
+  margin-right: 15%;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+li {
+  margin-bottom: 20px;
+  border-bottom: 1px solid #ddd;
+  border-top: 1px solid #ddd;
+  display: flex; 
+  justify-content: space-between; 
+  align-items: center; 
+  gap: 15px;
+  transition: box-shadow 0.3s ease, transform 0.3s ease; 
+}
+
+li:hover {
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); 
+  transform: translateY(-2px); 
+}
+
+.text {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+.descripcion {
+  color: #555555;
+}
+
+.linkNews {
+  text-decoration: none;
+  color: rgb(55, 55, 55);
+  border-radius: 5px;
+  padding-top: 15px;
+}
+
+.imagen {
+  width: 50%; 
+  height: 100%;
+  object-fit: cover; 
+}
+
+.autor.fecha {
+  color: #292929;
+}
+
+
+  
+
+</code></pre>
+    </div>
+
+    <div class="tab-pane fade " id="tree">
+        <div id="tree-container"></div>
+        <div class="tree-legend">
+            <div class="title">
+                <b>Legend</b>
+            </div>
+            <div>
+                <div class="color htmlelement"></div><span>Html element</span>
+            </div>
+            <div>
+                <div class="color component"></div><span>Component</span>
+            </div>
+            <div>
+                <div class="color directive"></div><span>Html element with directive</span>
+            </div>
+        </div>
+    </div>
+
+    
+</div>
+
+<script src="../js/libs/vis.min.js"></script>
+<script src="../js/libs/htmlparser.js"></script>
+<script src="../js/libs/deep-iterator.js"></script>
+<script>
+        var COMPONENT_TEMPLATE = '<div><header class="cabecera">    <div class="imagenLogo">        <a routerLink="/home">            <img id="logoHome" src="assets/image/logo_transparent_modoBlanco.png" width="110" alt="Logo empresa" title="Smartcell">        </a>    </div>    <div>        <a routerLink="/home" routerLinkActive="active" class="marcas">{{ home }}</a>        <a routerLink="/catalogo-apple" routerLinkActive="active" class="marcas">{{ apple }}</a>        <a routerLink="/catalogo-samsung" routerLinkActive="active" class="marcas">{{ samsung }}</a>        <a routerLink="/reserva" routerLinkActive="active" class="marcas">{{ reserva }}</a>        <a routerLink="/news" routerLinkActive="active" class="marcas">{{ news }}</a>    </div>    <div class="iconosNav">        <a href="#busqueda"><img id="logoHome" src="assets/image/busqueda-negro.png" width="22"></a>        <a href="#carrito"><img id="logoHome" src="assets/image/bolsa-de-la-compra-negro.png" width="22"></a>        <a href="#usuario"><img id="logoHome" src="assets/image/usuario_negro.png" width="22"></a>    </div></header><main>    <h1>{{ news }}</h1>    <ul>      <li *ngFor="let noticia of noticias">        <div class="text">        <a [href]="noticia.url" target="_blank" class="linkNews"><h3>{{ noticia.title }}</h3></a>        <p class="autor">{{ noticia.author }}</p>        <p class="fecha">{{ noticia.publishedAt }}</p>          <p class="descripcion">{{ noticia.description }}</p>        </div>        <img [src]="noticia.urlToImage" alt="{{ noticia.title }}" class="imagen" />      </li>    </ul>  </main>    </div>'
+    var COMPONENTS = [{'name': 'AppComponent', 'selector': 'app-root'},{'name': 'CatalogoAppleComponent', 'selector': 'app-catalogo-apple'},{'name': 'CatalogoSamsungComponent', 'selector': 'app-catalogo-samsung'},{'name': 'HomeComponent', 'selector': 'app-home'},{'name': 'NewsComponent', 'selector': 'app-news'},{'name': 'ReservaComponent', 'selector': 'app-reserva'}];
+    var DIRECTIVES = [];
+    var ACTUAL_COMPONENT = {'name': 'NewsComponent'};
+</script>
+<script src="../js/tree.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                   </div><div class="search-results">
+    <div class="has-results">
+        <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+        <ul class="search-results-list"></ul>
+    </div>
+    <div class="no-results">
+        <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+    </div>
+</div>
+</div>
+               <!-- END CONTENT -->
+           </div>
+       </div>
+
+          <label class="dark-mode-switch">
+               <input type="checkbox">
+               <span class="slider">
+                    <svg class="slider-icon" viewBox="0 0 24 24" fill="none" height="20" stroke="#000" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" width="20" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
+                    </svg>
+               </span>
+          </label>
+
+       <script>
+            var COMPODOC_CURRENT_PAGE_DEPTH = 1;
+            var COMPODOC_CURRENT_PAGE_CONTEXT = 'component';
+            var COMPODOC_CURRENT_PAGE_URL = 'NewsComponent.html';
+            var MAX_SEARCH_RESULTS = 15;
+       </script>
+
+       <script>
+               $darkModeToggleSwitchers = document.querySelectorAll('.dark-mode-switch input');
+               checkToggle(darkModeState);
+               if ($darkModeToggleSwitchers.length > 0) {
+                    for (var i = 0; i < $darkModeToggleSwitchers.length; i++) {
+                         $darkModeToggleSwitchers[i].addEventListener('change', function (event) {
+                              darkModeState = !darkModeState;
+                              toggleDarkMode(darkModeState);
+                         });
+                    }
+               }
+          </script>
+
+       <script src="../js/libs/custom-elements.min.js"></script>
+       <script src="../js/libs/lit-html.js"></script>
+
+       <script src="../js/menu-wc.js" defer></script>
+       <script nomodule src="../js/menu-wc_es5.js" defer></script>
+
+       <script src="../js/libs/bootstrap-native.js"></script>
+
+       <script src="../js/libs/es6-shim.min.js"></script>
+       <script src="../js/libs/EventDispatcher.js"></script>
+       <script src="../js/libs/promise.min.js"></script>
+
+       <script src="../js/compodoc.js"></script>
+
+       <script src="../js/tabs.js"></script>
+       <script src="../js/menu.js"></script>
+       <script src="../js/libs/clipboard.min.js"></script>
+       <script src="../js/libs/prism.js"></script>
+       <script src="../js/sourceCode.js"></script>
+          <script src="../js/search/search.js"></script>
+          <script src="../js/search/lunr.min.js"></script>
+          <script src="../js/search/search-lunr.js"></script>
+          <script src="../js/search/search_index.js"></script>
+       <script src="../js/lazy-load-graphs.js"></script>
+
+
+    </body>
+</html>
