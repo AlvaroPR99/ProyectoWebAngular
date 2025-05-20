@@ -4,7 +4,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
 import { CatalogoSamsungComponent } from './components/catalogo-samsung/catalogo-samsung.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
-import { NewsComponent } from './components/news/news.component';
+import { LoginComponent } from './components/login/login.component';
 
 // Definir las rutas
 export const routes: Routes = [
@@ -12,7 +12,7 @@ export const routes: Routes = [
   { path: 'home', component: HomeComponent},
   { path: 'catalogo-samsung', component: CatalogoSamsungComponent},
   { path: 'reserva', component: ReservaComponent },
-  { path: 'news', component: NewsComponent},
+  { path: 'login', component: LoginComponent},
   { path: '', component: HomeComponent },  // Esto indica que la ruta raíz carga el componente Home
   { path: '**', redirectTo: '' }
 ];

@@ -24,7 +24,7 @@ export class NewsService {
    * @private
    * @type {string} 
    */
-  private baseUrl = 'https://newsapi.org/v2/everything?q=apple&from=2025-02-10&to=2025-02-10&sortBy=popularity&apiKey=a994cdcdc821440c98d9b4e33ac47acc';
+  private baseUrl = 'http://localhost:8080/api/auth/login';
 
   /**
    * @description Constructor del servicio `NewsService`.
@@ -43,4 +43,8 @@ export class NewsService {
 
     return this.http.get(this.baseUrl, { params });
   }
+
+   login(credentials:any){
+    console.log('Login request:', credentials);
+    }
 }

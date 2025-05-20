@@ -103,7 +103,7 @@ export class CatalogoSamsungComponent implements OnInit {
         header.classList.remove('hide');
       }
       
-      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; // Para evitar valores negativos
+      this.lastScrollTop = currentScroll <= 0 ? 0 : currentScroll; 
     }
   
      /**
@@ -123,13 +123,13 @@ export class CatalogoSamsungComponent implements OnInit {
    * @memberof CatalogoSamsungComponent
    */
   getImageForModel(modeloCombinado: string): string {
-    const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo (iPhone 16, iPhone 16 Pro, etc.)
-    const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente en el array
+    const nombreModelo = this.getNombreModelo(modeloCombinado);
+    const modelo = this.modelos.find(m => m.name === nombreModelo); 
     if (modelo) {
-      const colorSeleccionado = this.getColor(modeloCombinado); // Obtener el color seleccionado
-      const colorIndex = modelo.colors.indexOf(colorSeleccionado); // Obtener el índice del color seleccionado
+      const colorSeleccionado = this.getColor(modeloCombinado); 
+      const colorIndex = modelo.colors.indexOf(colorSeleccionado); 
       console.log('Modelo:', nombreModelo, '| Color:', colorSeleccionado, '| Índice:', colorIndex);
-      return modelo.image[colorIndex] || ''; // Devolver la imagen correspondiente al índice
+      return modelo.image[colorIndex] || ''; 
     }
     console.log('Modelo no encontrado para imagen:', modeloCombinado);
     return '';
@@ -142,13 +142,13 @@ export class CatalogoSamsungComponent implements OnInit {
    * @memberof CatalogoSamsungComponent
    */
   getColor(modeloCombinado: string): string {
-    const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo
-    const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente
+    const nombreModelo = this.getNombreModelo(modeloCombinado); 
+    const modelo = this.modelos.find(m => m.name === nombreModelo); 
     if (modelo) {
-      const colorSeleccionado = modeloCombinado.split(' ').slice(-2, -1)[0]; // Extraer el color del modelo combinado
-      const colorIndex = modelo.colors.indexOf(colorSeleccionado); // Buscar el índice del color
+      const colorSeleccionado = modeloCombinado.split(' ').slice(-2, -1)[0]; 
+      const colorIndex = modelo.colors.indexOf(colorSeleccionado); 
       console.log('Modelo:', nombreModelo, '| Color Seleccionado:', colorSeleccionado, '| Índice:', colorIndex);
-      return modelo.colors[colorIndex] || ''; // Retornar el color correspondiente
+      return modelo.colors[colorIndex] || ''; 
     }
     console.log('Modelo no encontrado para color:', modeloCombinado);
     return '';

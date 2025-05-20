@@ -169,13 +169,13 @@ export class CatalogoAppleComponent implements OnInit {
    * @memberof CatalogoAppleComponent
    */
   getColor(modeloCombinado: string): string {
-    const nombreModelo = this.getNombreModelo(modeloCombinado); // Obtener el nombre del modelo
-    const modelo = this.modelos.find(m => m.name === nombreModelo); // Buscar el modelo correspondiente
+    const nombreModelo = this.getNombreModelo(modeloCombinado);
+    const modelo = this.modelos.find(m => m.name === nombreModelo); 
     if (modelo) {
-      const colorSeleccionado = modeloCombinado.split(' ').slice(-2, -1)[0]; // Extraer el color del modelo combinado
-      const colorIndex = modelo.colors.indexOf(colorSeleccionado); // Buscar el índice del color
+      const colorSeleccionado = modeloCombinado.split(' ').slice(-2, -1)[0]; 
+      const colorIndex = modelo.colors.indexOf(colorSeleccionado); 
       console.log('Modelo:', nombreModelo, '| Color Seleccionado:', colorSeleccionado, '| Índice:', colorIndex);
-      return modelo.colors[colorIndex] || ''; // Retornar el color correspondiente
+      return modelo.colors[colorIndex] || ''; 
     }
     console.log('Modelo no encontrado para color:', modeloCombinado);
     return '';

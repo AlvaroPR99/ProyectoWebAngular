@@ -9,7 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
 import { CatalogoSamsungComponent } from './components/catalogo-samsung/catalogo-samsung.component';
 import { ReservaComponent } from './components/reserva/reserva.component';
-import { NewsComponent } from './components/news/news.component';
+import { LoginComponent } from './components/login/login.component';
 import { CommonModule } from '@angular/common';
 
 // Define las rutas
@@ -25,7 +25,7 @@ const routes: Routes = [
     CatalogoAppleComponent,
     CatalogoSamsungComponent,
     ReservaComponent, 
-    NewsComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,

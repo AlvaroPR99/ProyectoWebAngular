@@ -1,0 +1,41 @@
+
+
+<form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div class="mb-3">
+    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
+    <input
+      id="exampleInputEmail1"
+      type="email"
+      formControlName="email"
+      [ngClass]="{ 'input-error': email?.invalid && email?.touched }"
+    />
+    <div *ngIf="email?.invalid && email?.touched" class="error-msg">
+      <small>Por favor, ingrese un correo electrónico válido.</small>
+    </div>
+  </div>
+
+  <div class="mb-3">
+    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+    <input
+      id="exampleInputPassword1"
+      type="password"
+      formControlName="password"
+      [ngClass]="{ 'input-error': password?.invalid && password?.touched }"
+    />
+    <div *ngIf="password?.invalid && password?.touched" class="error-msg">
+      <small>La contraseña es obligatoria.</small>
+    </div>
+  </div>
+
+  <div class="mb-3 form-check">
+    <input type="checkbox" class="form-check-input" id="exampleCheck1">
+    <label class="form-check-label" for="exampleCheck1">Mostrar</label>
+  </div>
+
+  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Enviar</button>
+</form>
+
+  
+  
+
+  

@@ -64,7 +64,7 @@ export class ReservaComponent {
       email: ['', [Validators.required, Validators.email]],
       number: ['', [Validators.required, Validators.pattern('^[0-9]*$')]],
       movil: ['', Validators.required],
-      capacidad: [{ value: '', disabled: true }, Validators.required], // Capacidad deshabilitada inicialmente
+      capacidad: [{ value: '', disabled: true }, Validators.required], 
       comentarios: ['']
     });
 
@@ -86,7 +86,7 @@ export class ReservaComponent {
     } else if (modeloSeleccionado === 'iPhone 16 Pro Max' || modeloSeleccionado === 'Samsung S25 Ultra') {
       this.capacidadesDisponibles = this.capacidadesSin128;
     } else {
-      this.capacidadesDisponibles = []; // Si no hay modelo seleccionado, no mostrar capacidades
+      this.capacidadesDisponibles = [];
     }
 
     // Habilitar el campo de capacidad si hay capacidades disponibles
