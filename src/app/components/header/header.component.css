@@ -1,4 +1,18 @@
 /*Cabecera completa*/
+/* Estado inicial oculto con opacidad y desplazamiento */
+.ventana-emergente {
+  animation: slideIn 0.4s ease forwards;
+  transform: translateY(-10px);
+  opacity: 0;
+}
+
+/* Animación de deslizamiento */
+@keyframes slideIn {
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 .header{
     font-family: 'General Sans', sans-serif;

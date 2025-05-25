@@ -8,24 +8,38 @@
     <a class="borderBut" routerLink="/Home">{{ github }}</a>
     <a class="borderBut" routerLink = "/menu" routerLinkActive = "active">{{ colorBack }}</a>
     <a class="borderBut" routerLink="/">{{ modeDark }}</a>
-    <button class="menu" (click)="toggleMenu()"><img src="assets/image/barrasblack.png"></button>
+    <button  *ngIf="isLoggedIn" class="menu" (click)="toggleMenu()"><img src="assets/image/barrasblack.png"></button>
+    <div class="linksMenu" class="menu" *ngIf="!isLoggedIn"> <a class="borderBut" routerLink="/login">Inicar sesión</a></div>
   </div>
 </div>
 
  <!-- Ventana emergente -->
  <div class="ventana-emergente" *ngIf="isMenuVisible">
-  <div class="headerMenu">
+  <div class="headerMenu" *ngIf="isLoggedIn; else loggedOutMessage">
     <span>¡Bienvenido, {{ userName }}!</span>
-
   </div>
-  <div class="menu">
+    <!-- Si el usuario no está logueado -->
+  <ng-template #loggedOutMessage>
+    <p></p>
+  </ng-template>
+  <div class="linksMenu" class="menu" *ngIf="isLoggedIn">
     <ul>
+      <div  *ngIf="isLoggedIn">
       <li><a href="#">{{ home }}</a></li>
+      </div>
+      <div  *ngIf="isLoggedIn">
       <li><a routerLink = "/menu" routerLinkActive = "active">{{ dashboard }}</a></li>
+      </div>
+      <div *ngIf="isLoggedIn">
       <li><a href="#">{{ settings }}</a></li>
-      <li><a href="#">{{ contact }}</a></li>
+      </div>
+      <div  *ngIf="isLoggedIn">
       <li><a href="#">{{ report }}</a></li>
-      <li><a (click)="logout()">{{logOut}}</a></li>
+      </div>
+      <div  *ngIf="isLoggedIn">
+      <li><a class="linksMenu" (click)="logout()">{{logOut}}</a></li>
+      </div>
     </ul>
   </div>
+   <div class="linksMenu" class="menu" *ngIf="isLoggedIn"></div>
   </div>  

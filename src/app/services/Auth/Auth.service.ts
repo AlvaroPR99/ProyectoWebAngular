@@ -12,12 +12,11 @@ export class AuthService {
     // Elimina token o datos del usuario
     localStorage.removeItem('token');
     localStorage.removeItem('user'); // si guardaste algo más
+    localStorage.setItem('isLoggedIn', 'false'); 
 
     // Redirige al login
     this.router.navigate(['/login']);
   }
 
-  isLoggedIn(): boolean {
-    return !!localStorage.getItem('token');
-  }
+ 
 }

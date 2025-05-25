@@ -22,8 +22,8 @@
       formControlName="email"
       [ngClass]="{ 'input-error': email?.invalid && email?.touched }"
     />
-    <div *ngIf="email?.invalid && email?.touched" class="error-msg">
-      <small>Por favor, ingrese un correo electrónico válido.</small>
+    <div *ngIf="emailError" class="error-msg">
+      <small>Por favor, ingrese un correo electrónico válido o inexistente.</small>
     </div>
   </div>
 

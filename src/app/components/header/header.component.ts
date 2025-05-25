@@ -9,11 +9,12 @@ import { AuthService } from '../../services/Auth/Auth.service';
   standalone: true,
   imports: [CommonModule, RouterModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.css'
+  styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
 
-   userName: string | null = '';
+  userName: string | null = '';
+  isLoggedIn: boolean = false;  
 
   // Variables para el contenido de la página
   logo = "Shears";
@@ -31,12 +32,12 @@ export class HeaderComponent implements OnInit {
 
   isMenuVisible = false;
 
-  // Inyecta ElementRef en el constructor
   constructor(private route: ActivatedRoute, private elRef: ElementRef, private authService: AuthService) { }
 
   ngOnInit(): void {
     const storedUser = localStorage.getItem('user');
-    this.userName = storedUser ? JSON.parse(storedUser) : null;
+    this.userName = storedUser;
+    this.isLoggedIn = !!storedUser; 
 
     this.route.params.subscribe(params => {
       if (params['logo']) {
@@ -56,12 +57,11 @@ export class HeaderComponent implements OnInit {
       }
     });
   }
-  
+
   toggleMenu() {
     this.isMenuVisible = !this.isMenuVisible;
   }
-  
-  // Función para cerrar el menú al hacer clic fuera
+
   @HostListener('document:click', ['$event'])
   onClick(event: MouseEvent) {
     if (!this.elRef.nativeElement.contains(event.target)) {
@@ -69,9 +69,10 @@ export class HeaderComponent implements OnInit {
     }
   }
 
-  // Función para cerrar sesión
   logout() {
     console.log('Usuario ha cerrado sesión');
     this.authService.logout();
+    localStorage.removeItem('user');  // Elimina el usuario de localStorage al cerrar sesión
+    this.isLoggedIn = false;  // Actualiza el estado de isLoggedIn
   }
 }

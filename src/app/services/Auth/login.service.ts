@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { RegisterRequest } from './RegisterRequest';
+import { Observable } from 'rxjs';
+import { LoginRequest } from './LoginRequest';
 
 
 /**
@@ -27,17 +30,8 @@ export class LoginService {
   constructor(private http: HttpClient) {}
 
 
-login(credentials: any) {
-  this.http.post(this.API_URL, credentials).subscribe({
-    next: (userData: any) => {
-      console.log('Login successful', userData);
-    },
-    error: (errorData: any) => {
-      console.error('Login failed', errorData);
-    },
-    complete: () => {
-      console.log('Login request completed');
-    }
-  });
+login(request: LoginRequest): Observable<any> {
+  return this.http.post(this.API_URL, request);
+
 }
 }
