@@ -1,0 +1,99 @@
+/*Cabecera completa*/
+
+.header{
+    font-family: 'General Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 450px;
+    
+    border-bottom: 1px solid #d7d7d7d5;
+}
+/* Enlaces de la parte derecha de la cabecera*/
+.bright{
+    display: flex;
+    gap: 40px;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+
+}
+/* Enlaces de la parte derecha que tienen bordes*/
+.borderBut {
+    font-size: 20px;
+    color: rgba(0, 0, 0, 0.516);
+}
+
+.borderBut:hover{
+    
+    color: #000;
+}
+
+/*Todos los enlaces*/
+a{
+    cursor: pointer;
+    padding: 20px;
+    text-decoration: none;
+    color: #000;
+}
+
+img {
+    width: 30px;  
+    height: 30px; 
+  }
+
+/*Botón menú*/
+.menu{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    position: relative;
+  display: inline-block; 
+}
+
+/*Ventana emergente del menú*/
+.ventana-emergente {
+  font-family: 'General Sans', sans-serif;
+  position: absolute;
+  align-items: center;
+  text-align: center;
+  top: 100px; 
+  right: 200px; 
+  width: 200px;
+  background-color: white;
+  border: 1px solid #d7d7d7d5;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000; 
+}
+
+.ventana-emergente .headerMenu {
+  padding: 10px;
+  background-color: #000000;
+  color: white;
+  border-bottom: 1px solid #d7d7d7d5;
+}
+
+.ventana-emergente .menu ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.ventana-emergente .menu li {
+  padding: 10px;
+  border-bottom: 1px solid #d7d7d7d5;
+}
+
+.ventana-emergente .menu li:last-child {
+  border-bottom: none;
+}
+
+.ventana-emergente .menu a {
+  text-decoration: none;
+  color: #333;
+}
+
+.ventana-emergente .menu a:hover {
+  color: #828282;
+}
+  
+

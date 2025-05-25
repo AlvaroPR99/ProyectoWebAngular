@@ -1,18 +1,17 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
-import { HomeComponent } from './components/home/home.component';
-import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
-import { CatalogoSamsungComponent } from './components/catalogo-samsung/catalogo-samsung.component';
-import { ReservaComponent } from './components/reserva/reserva.component';
+import { HomeComponent } from './components/home/home.component'; // Importar el componente Home
+import { MenuComponent }  from './components/menu/menu.component';
 import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 // Definir las rutas
 export const routes: Routes = [
-  { path: 'catalogo-apple', component: CatalogoAppleComponent }, // Ruta para el catálogo de Apple
+// Ruta para el catálogo de Apple
   { path: 'home', component: HomeComponent},
-  { path: 'catalogo-samsung', component: CatalogoSamsungComponent},
-  { path: 'reserva', component: ReservaComponent },
   { path: 'login', component: LoginComponent},
+  { path: 'register', component: RegisterComponent},
+  { path: 'menu', component: MenuComponent},
   { path: '', component: HomeComponent },  // Esto indica que la ruta raíz carga el componente Home
   { path: '**', redirectTo: '' }
 ];

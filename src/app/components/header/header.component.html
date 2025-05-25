@@ -1,0 +1,31 @@
+<!-- Header -->
+<div class="header">
+  <div class="bleft">
+    <a routerLink="/"><h1>{{ logo }}</h1></a>
+  </div>
+
+  <div class="bright">
+    <a class="borderBut" routerLink="/Home">{{ github }}</a>
+    <a class="borderBut" routerLink = "/menu" routerLinkActive = "active">{{ colorBack }}</a>
+    <a class="borderBut" routerLink="/">{{ modeDark }}</a>
+    <button class="menu" (click)="toggleMenu()"><img src="assets/image/barrasblack.png"></button>
+  </div>
+</div>
+
+ <!-- Ventana emergente -->
+ <div class="ventana-emergente" *ngIf="isMenuVisible">
+  <div class="headerMenu">
+    <span>¡Bienvenido, {{ userName }}!</span>
+
+  </div>
+  <div class="menu">
+    <ul>
+      <li><a href="#">{{ home }}</a></li>
+      <li><a routerLink = "/menu" routerLinkActive = "active">{{ dashboard }}</a></li>
+      <li><a href="#">{{ settings }}</a></li>
+      <li><a href="#">{{ contact }}</a></li>
+      <li><a href="#">{{ report }}</a></li>
+      <li><a (click)="logout()">{{logOut}}</a></li>
+    </ul>
+  </div>
+  </div>  

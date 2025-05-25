@@ -1,0 +1,18 @@
+<!-- Componente que muestra el sub-header de la aplicación -->
+<div class="views">
+  <app-searchbar></app-searchbar>
+  <!-- Contenedor de total de links del usuario-->
+  <div class="total-Links">
+      <p class="text-total-links">Enlaces guardados: 5</p>
+  </div>
+  <!-- Contenedor del ComboBox -->
+<div class="combobox-container">
+  <select id="colorSelect" [(ngModel)]="selectedColor" (change)="onColorChanged()">
+    <option *ngFor="let color of colors" [value]="color">{{ color }}</option>
+  </select>  
+</div>
+  </div>
+
+
+<!-- Muestra el juego seleccionado -->
+<p *ngIf="selectedColor">Has seleccionado: {{ selectedColor }}</p>

@@ -1,0 +1,5 @@
+<!-- Contenedor de la barra de búsqueda -->
+<div class="search-container">
+  <input type="text" placeholder="Buscar enlaces" [(ngModel)]="searchQuery" (input)="onSearch()" />
+  <button (click)="clearSearch()">✖</button>
+</div>

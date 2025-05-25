@@ -1,11 +1,11 @@
 import { Component, OnInit } from '@angular/core';
-import { NewsService } from '../../services/news/news.service';
+import { LoginService } from '../../services/Auth/login.service';
 import { RouterModule } from '@angular/router';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ReactiveFormsModule } from '@angular/forms';
-import { MarcasService } from '../../services/marca/marcas.services';
 import { CommonModule } from '@angular/common';
-import { HostListener } from '@angular/core';
+import { LoginRequest } from '../../services/Auth/LoginRequest';
+import { HeaderComponent } from '../header/header.component';
 
 /**
  * @description Componente que representa el catálogo de productos Apple.
@@ -17,7 +17,7 @@ import { HostListener } from '@angular/core';
 @Component({
   selector: 'app-news',
   standalone: true,
-  imports: [RouterModule, CommonModule, ReactiveFormsModule], 
+  imports: [RouterModule, CommonModule, ReactiveFormsModule, HeaderComponent], 
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css'] 
 })
@@ -26,9 +26,10 @@ export class LoginComponent implements OnInit {
 
   loginForm: FormGroup;
 
+  showPassword: boolean = false;
+
   constructor(
-    private marcasService: MarcasService, 
-    private newsService: NewsService, 
+    private loginService: LoginService, 
     private formBuilder: FormBuilder
   ) {
 
@@ -54,11 +55,17 @@ export class LoginComponent implements OnInit {
 
   login() {
     if (this.loginForm.valid) {
-      this.newsService.login(this.loginForm.value); // usa el servicio aquí
+      this.loginService.login(this.loginForm.value as LoginRequest);
       this.loginForm.reset();
+      this.redirectToMenu();
     } else {
       this.loginForm.markAllAsTouched();
     }
     
+  }
+
+  redirectToMenu() {
+    // Redirige a la página de inicio después de un registro exitoso
+    window.location.href = '/menu';
   }
 }

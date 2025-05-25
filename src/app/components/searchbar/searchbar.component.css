@@ -1,0 +1,36 @@
+*{
+  font-family: 'General Sans', sans-serif;
+}
+.search-container {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #d7d7d7d5;
+    border-right: 1px solid #d7d7d7d5;
+    
+    padding: 5px;
+    width: 300px;
+    background: white;
+  }
+
+  .search-container:hover{
+    border-bottom: 1px solid black;
+  }
+  
+  .search-container input {
+    border: none;
+    outline: none;
+    padding: 15px;
+    width: 100%;
+  }
+  
+  .search-container button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: #d7d7d7d5;
+  }
+
+  .search-container button :hover{
+    color: black;
+  }
+  

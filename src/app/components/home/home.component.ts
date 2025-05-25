@@ -1,50 +1,42 @@
 import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
-
-import { MarcasService } from '../../services/marca/marcas.services';
-
-/**
- * @description Componente que representa el catálogo de productos Apple.
- * @export
- * @class HomeComponent
- * @implements {OnInit}
- */
 
 @Component({
   selector: 'app-home',
-  imports: [RouterModule],
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css'
+  imports: [HeaderComponent, RouterModule],
+  styleUrls: ['./home.component.css']
 })
+export class HomeComponent implements OnInit {
+
+// Variables para el contenido de la página
+
+  title = "Corta Todos Tus Enlaces"; 
+  description = "Regístrate totalmente gratis. Guarda todos tus links acortados, ve estadísticas de uso y personaliza tus links.";
+  bgithub = "Github";
+  bshorten = "Cortar";
+  blogin = "Iniciar Sesión";
 
 
-export class HomeComponent {
+  constructor(private route: ActivatedRoute) { }
 
-   /**Nombre de Home */
-  home: string;
-
-  /**Nombre de Apple */
-  apple: string;
-
-  /**Nombre de Samsung */
-  samsung: string;
-
-  /**Nombre de Reservar */
-  reserva: string;
-
-  /**Nombre de Noticias */
-  news: string;
-
-  /**
-   * @description Constructor del componente.
-   * @param {MarcasService} marcasService Servicio que gestiona los nombres de la cabecera.
-   */
-  constructor(private marcasService: MarcasService) {
-    // Accede a los valores del servicio
-    this.home = this.marcasService.home;
-    this.apple = this.marcasService.apple;
-    this.samsung = this.marcasService.samsung;
-    this.reserva = this.marcasService.reserva;
-    this.news = this.marcasService.news;
+  ngOnInit(): void {
+    this.route.params.subscribe(params => {
+      if (params['title']) {
+        this.title = params['title'];
+      }
+      if (params['description']) {
+        this.description = params['description'];
+      }
+      if (params['github']) {
+        this.bgithub = params['github'];
+      }
+      if (params['shorten']) {
+        this.bshorten = params['shorten'];
+      }
+    });
   }
+
 }

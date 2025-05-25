@@ -1,10 +1,13 @@
 
-
+<app-header></app-header>
 <form [formGroup]="loginForm" (ngSubmit)="login()">
+  <div id="title">
+    <h2>Inicia sesión</h2>
+  </div>
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Correo electrónico</label>
     <input
-      id="exampleInputEmail1"
+      id="inputEmail"
+      placeholder="Correo electrónico"
       type="email"
       formControlName="email"
       [ngClass]="{ 'input-error': email?.invalid && email?.touched }"
@@ -15,10 +18,11 @@
   </div>
 
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Contraseña</label>
+
     <input
-      id="exampleInputPassword1"
-      type="password"
+      id="inputPassword"
+      placeholder="Contraseña"
+      [type]="showPassword ? 'text' : 'password'"
       formControlName="password"
       [ngClass]="{ 'input-error': password?.invalid && password?.touched }"
     />
@@ -28,11 +32,19 @@
   </div>
 
   <div class="mb-3 form-check">
-    <input type="checkbox" class="form-check-input" id="exampleCheck1">
-    <label class="form-check-label" for="exampleCheck1">Mostrar</label>
+    <input
+    type="checkbox"
+    class="form-check-input"
+    id="togglePassword"
+    (change)="showPassword = !showPassword"
+  />
+    <label class="form-check-label" for="exampleCheck1">Mostrar contraseña</label>
   </div>
 
-  <button type="submit" class="btn btn-primary" [disabled]="loginForm.invalid">Enviar</button>
+  <div class="sessionButton">
+  <button type="submit" class="btn-login" [disabled]="loginForm.invalid">Iniciar sesión</button>
+  <button type="button" class="btn-register" routerLink = "/register">Regístrate</button>
+  </div>
 </form>
 
   
