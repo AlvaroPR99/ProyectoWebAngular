@@ -45,9 +45,11 @@
 /*Todos los enlaces*/
 a{
     cursor: pointer;
-    padding: 20px;
     text-decoration: none;
     color: #000;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem; 
 }
 
 img {
@@ -109,5 +111,6 @@ img {
 .ventana-emergente .menu a:hover {
   color: #828282;
 }
-  
+
+
 

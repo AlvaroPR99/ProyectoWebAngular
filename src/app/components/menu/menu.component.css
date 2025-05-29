@@ -1,15 +1,129 @@
-*{
-    font-family: 'General Sans', sans-serif;
-    
+* {
+  font-family: 'General Sans', sans-serif;
+  box-sizing: border-box;
 }
-.views{
-    
+
+.buttons-container {
+  display: flex;
+  justify-content: center;
+ 
+}
+
+.short-url{
+   text-decoration: none;
+}
+.url-header{
     display: flex;
-    
+    justify-content: space-between;
+    gap: 1rem;
 }
-.total-Links{
-    padding-left: 5px;
-    padding-right: 5px;
-    border-bottom: 1px solid #d7d7d7d5;
-    border-right: 1px solid #d7d7d7d5;
+.url-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* 2 columnas fijas */
+  margin-left: 15%;
+  margin-right: 15%;
+  gap: 0.5rem;
+  padding-top: 1rem;
+  align-items: start;
 }
+
+.url-container button{
+   background-color: transparent; 
+  border: none;                  
+  cursor: pointer;            
+  color: inherit;  
+}
+
+.delete-button svg {
+  transition: color 0.3s ease; 
+  color: #000000; 
+}
+
+.delete-button:hover svg {
+  color: rgb(167, 0, 0); 
+}
+
+.copy-button svg{
+ transition: color 0.3s ease; 
+  color: #000000; 
+}
+
+.copy-button:hover svg{
+  color: #8d8d8d; 
+}
+
+.qr-button svg{
+ transition: color 0.3s ease; 
+  color: #000000; 
+}
+
+.qr-button:hover svg{
+  color: #8d8d8d; 
+}
+.url-card {
+  border: 1px solid #d7d7d7d5;
+  padding: 1rem;
+    width: 100%;
+  max-width: 900px;
+    overflow: hidden;
+}
+
+.url-card p {
+  white-space: nowrap;      
+  overflow: hidden;      
+  text-overflow: ellipsis;    
+  width: 100%;                 
+}
+
+.short-url {
+  font-weight: bold;
+  color: #000;
+}
+
+.original-url {
+  color: #333;
+  word-break: break-word; 
+}
+
+.menu-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.add-url-button{
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem; 
+  color: white;
+  background-color: #588157;
+  border: 1px solid #588157;
+  font-size: large;
+  margin-top: 1rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  padding: 0.55rem;
+  cursor: pointer; 
+  transition: background-color 0.3s ease;
+}
+
+.add-url-button:hover{
+    background-color: #ffffff;
+    color: #000000;
+    border: 1px solid #d7d7d7d5; 
+}
+
+.mesg-copy {
+  margin-top: 4px;
+  color: green;
+  font-size: 0.9rem;
+  animation: fadeOut 2s forwards;
+}
+
+@keyframes fadeOut {
+  0% { opacity: 1; }
+  80% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+
+
