@@ -7,7 +7,6 @@
   <div class="bright">
     <a class="borderBut" routerLink="/Home">{{ github }}</a>
     <a class="borderBut" routerLink = "/menu" routerLinkActive = "active">{{ colorBack }}</a>
-    <a class="borderBut" routerLink="/">{{ modeDark }}</a>
     <button  *ngIf="isLoggedIn" class="menu" (click)="toggleMenu()"><img src="assets/image/barrasblack.png"></button>
     <div class="linksMenu" class="menu" *ngIf="!isLoggedIn"> <a class="borderBut" routerLink="/login">Inicar sesión</a></div>
   </div>

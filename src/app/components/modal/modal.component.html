@@ -1,0 +1,14 @@
+<div class="modal-backdrop">
+  <div class="modal-content">
+    <div class="modal-header">
+      <h2>Código QR</h2>
+    </div>
+   <img *ngIf="imageUrl" [src]="imageUrl" alt="Código QR">
+    <div class="buttons">
+      <button (click)="descargarQR()" class="downloadButton">Descargar</button>
+      <button class= "closeButton" (click)="close()">Cerrar</button>
+      
+    </div>
+
+  </div>
+</div>

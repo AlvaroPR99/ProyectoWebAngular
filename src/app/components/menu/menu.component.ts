@@ -3,11 +3,13 @@ import { CommonModule } from '@angular/common';
 import { HeaderComponent } from '../header/header.component';
 import { SubHeaderComponent } from '../sub-header/sub-header.component';
 import { UrlService } from '../../services/ShortUrl/geturl.service';
+import { ModalComponent } from '../modal/modal.component';
+import { QrService } from '../../services/ShortUrl/qrcode.service';
 
 @Component({
   selector: 'app-menu',
   standalone: true,
-  imports: [CommonModule, HeaderComponent],
+  imports: [CommonModule, HeaderComponent, ModalComponent],
   templateUrl: './menu.component.html',
   styleUrl: './menu.component.css'
 })
@@ -15,14 +17,15 @@ export class MenuComponent implements OnInit {
   urls: any[] = [];
 
   
-  constructor(private urlService: UrlService) {}
+  constructor(private urlService: UrlService, private qrcodeService: QrService) {}
 
   ngOnInit(): void {
   this.urlService.getUrls().subscribe({
     next: (data) => {
       this.urls = data.map(url => ({
         ...url,
-        copiado: false
+        copiado: false,
+        showQR: false
       }));
     },
     error: (err) => {
@@ -58,6 +61,27 @@ copiarUrl(shortUrl: string, url: any) {
       url.copiado = false;
     }, 2000);
   });
+}
+
+qrImageUrl: string | null = null;
+
+     // Método para abrir el modal y obtener el QR
+  openQrModal(shortUrl: string): void {
+    this.qrcodeService.generateQrCodeUrl(shortUrl).subscribe(
+      (response: Blob) => {
+        // Crear una URL de objeto para la imagen
+        this.qrImageUrl = URL.createObjectURL(response);
+        
+      },
+      (error) => {
+        console.error('Error al generar el QR', error);
+      }
+    );
+  }
+
+
+closeModal(): void {
+  this.qrImageUrl = null;
 }
 
 

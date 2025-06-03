@@ -9,12 +9,12 @@
     <p>{{ description }}</p>
 </div>
 
-<form>
+ <form (ngSubmit)="crearUrl()">
     <div class="input-group">
-        <input type="text" class="insert-link" placeholder="Inserta URL">
-        <span class="input-group-btn">
-            <button class="btn-shorten" type="submit">{{ bshorten }}</button>
-        </span>
+      <input type="text" class="insert-link" placeholder="Inserta URL" [(ngModel)]="originalUrl" name="url" required>
+      <span class="input-group-btn">
+        <button class="btn-shorten" type="submit">{{ bshorten }}</button>
+      </span>
     </div>
-</form>
+  </form>
 </div>

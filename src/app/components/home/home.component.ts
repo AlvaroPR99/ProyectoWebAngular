@@ -3,16 +3,19 @@ import { ActivatedRoute } from '@angular/router';
 import { HeaderComponent } from '../header/header.component';
 import { RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
+import { UrlShortenService } from '../../services/ShortUrl/urlShorten.service';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-home',
    standalone: true,
   templateUrl: './home.component.html',
-  imports: [HeaderComponent, RouterModule, CommonModule],
+  imports: [HeaderComponent, RouterModule, CommonModule, FormsModule],
   styleUrls: ['./home.component.css']
 })
 export class HomeComponent implements OnInit {
 
+  originalUrl: string = '';
   isLoggedIn: boolean = false;  
   userName: string | null = '';
 
@@ -23,7 +26,7 @@ export class HomeComponent implements OnInit {
   blogin = "Iniciar Sesión";
 
 
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private shortenService: UrlShortenService) { }
 
   ngOnInit(): void {
 
@@ -46,5 +49,20 @@ export class HomeComponent implements OnInit {
       }
     });
   }
+
+crearUrl() {
+    if (!this.originalUrl.trim()) {
+      alert('Por favor introduce una URL válida.');
+      return;
+    }
+
+    this.shortenService.acortarAleatorio(this.originalUrl).subscribe({
+      next: (res) => {
+        console.log('URL aleatoria acortada:', res.shortUrl);
+      },
+      error: (err) => console.error(err)
+    });
+  }
+
 
 }
