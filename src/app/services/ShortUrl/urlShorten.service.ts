@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable, map } from 'rxjs';
+import { HttpClient, HttpHeaders } from '@angular/common/http'; 
+import { Observable } from 'rxjs';
 
 export interface UrlResponse {
   shortUrl: string;
@@ -15,12 +15,41 @@ export class UrlShortenService {
   constructor(private http: HttpClient) {}
 
   acortarAleatorio(originalUrl: string): Observable<UrlResponse> {
-    return this.http
-      .post<{ shortUrl: string }>(`${this.apiUrl}/shorten`, { url: originalUrl });
+    const token = localStorage.getItem('token');
+    const headers = token
+      ? new HttpHeaders().set('Authorization', `Bearer ${token}`)
+      : undefined;
+
+    return this.http.post<UrlResponse>(
+      `${this.apiUrl}/shorten`, 
+      { url: originalUrl },
+      { headers: headers || new HttpHeaders() }
+    );
   }
 
   acortarPersonalizado(originalUrl: string, customAlias: string): Observable<UrlResponse> {
-    return this.http
-      .post<{ shortUrl: string }>(`${this.apiUrl}/shorten/${customAlias}`, { url: originalUrl });
+    const token = localStorage.getItem('token');
+    const headers = token
+      ? new HttpHeaders().set('Authorization', `Bearer ${token}`)
+      : undefined;
+
+    return this.http.post<UrlResponse>(
+      `${this.apiUrl}/shorten/${customAlias}`, 
+      { url: originalUrl },
+      { headers: headers || new HttpHeaders() }
+    );
   }
+
+  eliminarUrl(shortUrl: string): Observable<any> {
+  const token = localStorage.getItem('token');
+
+  const headers = token
+    ? new HttpHeaders({ Authorization: `Bearer ${token}` })
+    : new HttpHeaders(); // cabeceras vacías si no hay token
+
+  return this.http.delete(`${this.apiUrl}/delete-url/${shortUrl}`, { headers });
+}
+
+
+
 }

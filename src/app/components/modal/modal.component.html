@@ -5,8 +5,8 @@
     </div>
    <img *ngIf="imageUrl" [src]="imageUrl" alt="Código QR">
     <div class="buttons">
+      <button class= "closeButton" (click)="cerrar()">Cerrar</button>
       <button (click)="descargarQR()" class="downloadButton">Descargar</button>
-      <button class= "closeButton" (click)="close()">Cerrar</button>
       
     </div>
 

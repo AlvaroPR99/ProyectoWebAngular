@@ -59,10 +59,34 @@ crearUrl() {
     this.shortenService.acortarAleatorio(this.originalUrl).subscribe({
       next: (res) => {
         console.log('URL aleatoria acortada:', res.shortUrl);
+        this.shortenedUrl = res.shortUrl;
       },
       error: (err) => console.error(err)
     });
   }
+
+    getShortUrlLink(url: string): string {
+    return url;
+  }
+  
+shortenedUrl: string | null = null;
+copySuccess = false;
+showCopyButton = true;
+
+
+copiarUrl(shortUrl: string) {
+  navigator.clipboard.writeText(shortUrl).then(() => {
+    this.copySuccess = true;
+    this.showCopyButton = false;
+
+    // Solo ocultamos el botón y el mensaje después de 2s
+    setTimeout(() => {
+      this.copySuccess = false;
+      this.showCopyButton = true;
+    }, 2000);
+  });
+}
+
 
 
 }

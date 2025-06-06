@@ -1,4 +1,4 @@
-import { Component, Input } from '@angular/core';
+import { Component, EventEmitter, Input, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 @Component({
@@ -10,7 +10,12 @@ import { CommonModule } from '@angular/common';
 })
 export class ModalComponent {
   @Input() imageUrl: string | null = null;
- @Input() close!: () => void;
+  @Output() closeModal = new EventEmitter<void>();
+
+  cerrar(): void {
+    this.closeModal.emit();
+  }
+
   descargarQR(): void {
     if (this.imageUrl) {
       const link = document.createElement('a');

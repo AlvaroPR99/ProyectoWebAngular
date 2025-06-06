@@ -1,0 +1,61 @@
+<!-- modal-createlink.component.html -->
+
+<div class="modal-overlay" (click)="cerrarModal()">
+  <div class="modal-container" (click)="$event.stopPropagation()">
+    <h2>Crea un link</h2>
+    
+    <form [formGroup]="formulario" (ngSubmit)="crearUrl()">
+      <!-- Campo para la URL original -->
+      <div class="form-group">
+        <label for="originalUrl">URL Original:</label>
+        <input
+          id="originalUrl"
+          type="text"
+          formControlName="originalUrl"
+          placeholder="Introduce la URL original"
+          [class.invalid]="formulario.get('originalUrl')?.invalid && formulario.get('originalUrl')?.touched"
+        />
+        <div *ngIf="formulario.get('originalUrl')?.invalid && formulario.get('originalUrl')?.touched" class="error-message">
+          <span *ngIf="formulario.get('originalUrl')?.hasError('required')">La URL es requerida.</span>
+          <span *ngIf="formulario.get('originalUrl')?.hasError('pattern')">La URL no es válida.</span>
+        </div>
+      </div>
+
+      <!-- Selector de tipo (Aleatorio o Personalizado) -->
+      <div class="form-group">
+        <label for="tipo">Tipo de Enlace:</label>
+        <select id="tipo" formControlName="tipo" (change)="togglePersonalizado()">
+          <option value="aleatorio">Aleatorio</option>
+          <option value="personalizado">Personalizado</option>
+        </select>
+      </div>
+
+      <!-- Campo para el alias personalizado -->
+      <div class="form-group" *ngIf="formulario.get('tipo')?.value === 'personalizado'">
+        <label for="shortUrl">Alias Personalizado:</label>
+        <input
+          id="shortUrl"
+          type="text"
+          formControlName="shortUrl"
+          placeholder="Introduce un alias personalizado"
+          [class.invalid]="formulario.get('shortUrl')?.invalid && formulario.get('shortUrl')?.touched"
+        />
+        <div *ngIf="formulario.get('shortUrl')?.invalid && formulario.get('shortUrl')?.touched" class="error-message">
+          <span *ngIf="formulario.get('shortUrl')?.hasError('required')">El alias es requerido.</span>
+        </div>
+      </div>
+
+      <!-- Mensaje de error general -->
+      <div *ngIf="errorMessage" class="error-message">
+        <span>{{ errorMessage }}</span>
+      </div>
+
+      <!-- Botones de acción -->
+      <div class="form-actions">
+        <button type="button" (click)="cerrarModal()" class="cancelLink">Cancelar</button>
+        <button type="submit" [disabled]="formulario.invalid" class="createLink"><svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  stroke-width="1.25"  stroke-linecap="round"  stroke-linejoin="round"  class="icon icon-tabler icons-tabler-outline icon-tabler-link-plus"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 15l6 -6" /><path d="M11 6l.463 -.536a5 5 0 0 1 7.072 0a4.993 4.993 0 0 1 -.001 7.072" /><path d="M12.603 18.534a5.07 5.07 0 0 1 -7.127 0a4.972 4.972 0 0 1 0 -7.071l.524 -.463" /><path d="M16 19h6" /><path d="M19 16v6" /></svg>Crear Enlace</button>
+      </div>
+    </form>
+  </div>
+</div>
+

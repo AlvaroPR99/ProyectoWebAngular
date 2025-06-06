@@ -2,15 +2,14 @@ import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule, Routes } from '@angular/router'; // Importa RouterModule y Routes
 import { HttpClientModule } from '@angular/common/http'; // Si usas HttpClient
-
-
+import { MenuComponent } from './components/menu/menu.component';
+import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
-import { CatalogoAppleComponent } from './components/catalogo-apple/catalogo-apple.component';
-import { CatalogoSamsungComponent } from './components/catalogo-samsung/catalogo-samsung.component';
-import { ReservaComponent } from './components/reserva/reserva.component';
+import { ModalCreatelinkComponent } from './components/modal-createlink/modal-createlink.component';
 import { LoginComponent } from './components/login/login.component';
 import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 // Define las rutas
 const routes: Routes = [
@@ -22,14 +21,15 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    CatalogoAppleComponent,
-    CatalogoSamsungComponent,
-    ReservaComponent, 
+    MenuComponent,
+    ModalCreatelinkComponent,
     LoginComponent
   ],
   imports: [
     BrowserModule,
     CommonModule,
+    FormsModule,
+    ReactiveFormsModule,
     RouterModule.forRoot(routes),
     HttpClientModule
   ],
