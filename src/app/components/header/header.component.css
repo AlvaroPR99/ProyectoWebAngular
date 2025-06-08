@@ -104,6 +104,8 @@ img {
 }
 
 .ventana-emergente .menu a {
+  display: flex;
+  justify-content: flex-start;
   text-decoration: none;
   color: #333;
 }
