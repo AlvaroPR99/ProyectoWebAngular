@@ -11,14 +11,22 @@
 
 <form (ngSubmit)="crearUrl()" #form="ngForm">
     <div class="input-group">
-      <input
-        type="text"
-        class="insert-link"
-        placeholder="Inserta URL"
-        [(ngModel)]="originalUrl"
-        name="url"
-        required
-      />
+     <input
+  type="text"
+  class="insert-link"
+  placeholder="Inserta URL"
+  [(ngModel)]="originalUrl"
+  name="url"
+  required
+   pattern="https?://[^\s/$.?#].[^\s]*"
+  #urlInput="ngModel"
+/>
+<div class="error" *ngIf="urlInput.invalid && (urlInput.dirty || urlInput.touched)">
+  <p *ngIf="urlInput.errors?.['required']">La URL es obligatoria.</p>
+  <p *ngIf="urlInput.errors?.['pattern']">La URL debe empezar por http:// o https://</p>
+</div>
+
+
       <span class="input-group-btn">
         <button class="btn-shorten" type="submit">{{ bshorten }}</button>
       </span>

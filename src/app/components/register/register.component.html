@@ -15,17 +15,30 @@
   </div>
 
   <div class="mb-3">
-    <input
-      id="inputEmail"
-      placeholder="Correo electrónico"
-      type="email"
-      formControlName="email"
-      [ngClass]="{ 'input-error': email?.invalid && email?.touched }"
-    />
-    <div *ngIf="emailError" class="error-msg">
-      <small>Por favor, ingrese un correo electrónico válido o inexistente.</small>
-    </div>
+  <input
+    id="inputEmail"
+    placeholder="Correo electrónico"
+    type="email"
+    formControlName="email"
+    [ngClass]="{ 'input-error': (email?.invalid && email?.touched) || emailError }"
+  />
+
+  <!-- Error si el campo está vacío -->
+  <div *ngIf="email?.hasError('required') && email?.touched" class="error-msg">
+    <small>El correo electrónico es obligatorio.</small>
   </div>
+
+  <!-- Error si el formato no es válido -->
+  <div *ngIf="email?.hasError('email') && email?.touched" class="error-msg">
+    <small>Por favor, introduce un correo electrónico válido.</small>
+  </div>
+
+  <!-- Error si ya existe en el backend -->
+  <div *ngIf="emailError" class="error-msg">
+    <small>{{ emailError }}</small>
+  </div>
+</div>
+
 
   <div class="mb-3">
     <input

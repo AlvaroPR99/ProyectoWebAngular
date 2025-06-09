@@ -8,6 +8,7 @@ import { QrService } from '../../services/ShortUrl/qrcode.service';
 import { UrlShortenService } from '../../services/ShortUrl/urlShorten.service';
 import { ModalCreatelinkComponent } from '../modal-createlink/modal-createlink.component';
 
+
 @Component({
   selector: 'app-menu',
   standalone: true,
@@ -132,53 +133,10 @@ esUrlValida(url: string): boolean {
 }
 
 
-crearUrl(nuevaUrl: { originalUrl: string, tipo: string, shortUrl?: string }): void {
-  // Validación de la URL
-  if (!this.esUrlValida(nuevaUrl.originalUrl)) {
-    console.error('La URL no está en un formato correcto.');
-    return; // Detener la ejecución si la URL no es válida
+ crearUrl(event: { originalUrl: string, tipo: string, shortUrl?: string }) {
+    this.urls.push(event); // Aquí puedes actualizar la lista o hacer más cosas
+    console.log('URL creada:', event);
   }
-
-  if (nuevaUrl.tipo === 'aleatorio') {
-    // Llamar a la API para crear la URL aleatoria
-    this.urlShortenService.acortarAleatorio(nuevaUrl.originalUrl).subscribe({
-      next: (data) => {
-        console.log('URL creada correctamente', data);
-        this.urls.push(data);  // Agregar la nueva URL a la lista
-        this.cerrarModal();
-      },
-      error: (err) => {
-        if (err.status === 400) {
-          console.error('Error 400: URL ya existe');
-        } else {
-          console.error('Error creando la URL', err);
-        }
-      }
-    });
-  } else {
-    // Verificamos que shortUrl (alias) esté presente
-    if (!nuevaUrl.shortUrl) {
-      console.error('Se requiere un alias para la URL personalizada');
-      return;
-    }
-
-    // Llamar a la API para crear la URL personalizada
-    this.urlShortenService.acortarPersonalizado(nuevaUrl.originalUrl, nuevaUrl.shortUrl).subscribe({
-      next: (data) => {
-        console.log('URL personalizada creada correctamente', data);
-        this.urls.push(data);  // Agregar la nueva URL a la lista
-        this.cerrarModal();
-      },
-      error: (err) => {
-        if (err.status === 400) {
-          console.error('Error 400: URL ya existe');
-        } else {
-          console.error('Error creando la URL personalizada', err);
-        }
-      }
-    });
-  }
-}
 
 mostrarModal = false;
 

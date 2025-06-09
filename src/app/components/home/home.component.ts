@@ -20,7 +20,7 @@ export class HomeComponent implements OnInit {
   userName: string | null = '';
 
   title = "Corta Todos Tus Enlaces"; 
-  description = "Regístrate totalmente gratis. Guarda todos tus links acortados, ve estadísticas de uso y personaliza tus links.";
+  description = "Regístrate totalmente gratis. Guarda todos tus links acortados, ve estadísticas de uso y personalizalos.";
   bgithub = "Github";
   bshorten = "Cortar";
   blogin = "Iniciar Sesión";
@@ -51,19 +51,30 @@ export class HomeComponent implements OnInit {
   }
 
 crearUrl() {
-    if (!this.originalUrl.trim()) {
-      alert('Por favor introduce una URL válida.');
-      return;
-    }
+  const url = this.originalUrl.trim();
 
-    this.shortenService.acortarAleatorio(this.originalUrl).subscribe({
-      next: (res) => {
-        console.log('URL aleatoria acortada:', res.shortUrl);
-        this.shortenedUrl = res.shortUrl;
-      },
-      error: (err) => console.error(err)
-    });
+  const forbiddenSchemes = /^(javascript|data):/i;
+  if (forbiddenSchemes.test(url)) {
+    alert('Esta URL no está permitida.');
+    return;
   }
+
+  try {
+    new URL(url); // Validación general
+  } catch {
+    alert('La URL introducida no es válida.');
+    return;
+  }
+
+  this.shortenService.acortarAleatorio(url).subscribe({
+    next: (res) => {
+      this.shortenedUrl = res.shortUrl;
+    },
+    error: (err) => console.error(err)
+  });
+}
+
+
 
     getShortUrlLink(url: string): string {
     return url;

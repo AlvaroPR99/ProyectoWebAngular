@@ -11,7 +11,7 @@ import { HeaderComponent } from '../header/header.component';
   standalone: true,
   imports: [RouterModule, CommonModule, ReactiveFormsModule, FormsModule, HeaderComponent],
   templateUrl: './register.component.html',
-  styleUrls: ['./register.component.css'] // <- corrección aquí (era "styleUrl")
+  styleUrls: ['./register.component.css'] 
 })
 export class RegisterComponent implements OnInit {
   registerForm: FormGroup;
@@ -32,6 +32,7 @@ export class RegisterComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  
   // Validador personalizado para que las contraseñas coincidan
   passwordsMatchValidator(group: AbstractControl): ValidationErrors | null {
     const password = group.get('password')?.value;
@@ -53,7 +54,7 @@ export class RegisterComponent implements OnInit {
         next: (response: any) => {
           localStorage.setItem('isLoggedIn', 'true');
           localStorage.setItem('user', response.body.name);
-          localStorage.setItem('token', response.body.access_token);
+          localStorage.setItem('token', response.body.access_token); 
           this.registerForm.reset();
           this.emailError = null;
           this.redirectToMenu();
@@ -65,13 +66,14 @@ export class RegisterComponent implements OnInit {
             this.emailError = 'Error inesperado. Inténtalo de nuevo.';
           }
           console.error('Error en el registro', error);
-        }
+        } 
       });
 
     } else {
       this.registerForm.markAllAsTouched();
     }
   }
+  
 
   redirectToMenu() {
     window.location.href = '/menu';

@@ -72,7 +72,7 @@ export class HeaderComponent implements OnInit {
   logout() {
     console.log('Usuario ha cerrado sesión');
     this.authService.logout();
-    localStorage.removeItem('user');  // Elimina el usuario de localStorage al cerrar sesión
-    this.isLoggedIn = false;  // Actualiza el estado de isLoggedIn
+    localStorage.removeItem('user'); 
+    this.isLoggedIn = false;  
   }
 }

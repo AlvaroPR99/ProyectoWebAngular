@@ -1,0 +1,27 @@
+ *{
+          font-family: 'General Sans', sans-serif;
+  box-sizing: border-box;
+    }
+.principal{
+    border: 1px solid #d7d7d7d5;
+    padding: 1rem;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    gap: 450px;
+    
+}
+.linkdin a{
+    display: inline-flex;
+    align-items: center;
+     text-decoration: none;
+  color: inherit;
+  gap: 0.25rem;
+}
+
+.madeWith p{
+    margin: 0px;
+     display: inline-flex;
+    align-items: center;
+    gap: 0.25rem;
+}
